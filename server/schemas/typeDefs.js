@@ -24,21 +24,21 @@ const typeDefs = gql`
     createdAt: String
   }
 
-  // type Auth {
-  //   token: ID!
-  //   user: User
-  // }
+   type Auth {
+     token: ID!
+     user: User
+   }
 
   type Query {
     users: [User]
     user(username: String!): User
     blogs(username: String): [Blog]
-    blogs(blogId: ID!): Blog
+    blog(blogId: ID!): Blog
   }
 
   type Mutation {
-    addUser(username: String!, email: String!, password: String!): 
-    login(email: String!, password: String!): 
+    addUser(username: String!, email: String!, password: String!):Auth 
+    login(email: String!, password: String!): Auth
     addBlog(blogText: String!, blogAuthor: String!): Blog
     addComment(
       blogId: ID!
