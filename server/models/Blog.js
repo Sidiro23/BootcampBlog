@@ -1,35 +1,45 @@
 const { Schema, model } = require('mongoose');
-const commentSchema = require('./Comment');
+const dateFormat = require('../utils/dateFormat');
 
-const blogSchema = new Schema(
-  {
-    blogText: {
-      type: String,
-      required: true,
-    },
-    createdAt: {
-      type: Date,
-      default: Date.now,
-    },
-    username: {
-      type: String,
-      required: true,
-    },
-    comments: [commentSchema],
-    },
+const blogSchema = new Schema({
+  blogText: {
+    type: String,
+    required: 'You need to leave a blog!',
+    minlength: 1,
+    // maxlength: 100,
+    trim: true,
+  },
+  blogAuthor: {
+    type: String,
+    required: true,
+    trim: true,
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now,
+    get: (timestamp) => dateFormat(timestamp),
+  },
+  comments: [
     {
-      toJSON: {
-        getters: true,
+      commentText: {
+        type: String,
+        required: true,
+        minlength: 1,
+        maxlength: 280,
       },
-      id: false,
-    });
-    
-blogSchema
-  .virtual('commentCount')
-  .get(function () {
-  return this.comments.length;
-  });
+      commentAuthor: {
+        type: String,
+        required: true,
+      },
+      createdAt: {
+        type: Date,
+        default: Date.now,
+        get: (timestamp) => dateFormat(timestamp),
+      },
+    },
+  ],
+});
 
-const blog = model('blog', blogSchema);
+const Blog = model('Blog', blogSchema);
 
 module.exports = Blog;
