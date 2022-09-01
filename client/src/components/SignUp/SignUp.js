@@ -1,5 +1,7 @@
 import React, {useState} from 'react'
 import { checkPassword, validateEmail, validateName } from '../utils/helpers'
+const bcrypt = require ('bcrypt');
+const saltRounds = 10;
 
 function SignupForm(){
     const [email, setEmail]=useState('');
@@ -37,7 +39,7 @@ function SignupForm(){
             setErrorMessage(
                 `Choose a more secure password for ${userName}`
             );
-            return
+            return 
         }
         if (!validateName(firstName)){
             setErrorMessage(
@@ -57,6 +59,8 @@ function SignupForm(){
         setFirstName('');
         setLastName('');
         setPassword('');
+
+    
     };
     return(
     <div class="row">
