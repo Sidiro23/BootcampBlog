@@ -2,46 +2,54 @@ const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
   type User {
-    _id: ID!
-    username: String!
+    _id: ID
+    username: String
     email: String
-    bookCount: Int
-    savedBooks: [Book]
+    password: String
+    blogs: [Blog]!
   }
 
-  // type Book {
-  //   bookId: ID!
-  //   authors: [String]
-  //   description: String
-  //   image: String
-  //   link: String
-  //   title: String!
-  // }
-
-  type Auth {
-    token: ID!
-    user: User
+  type Blog {
+    _id: ID
+    blogText: String
+    blogAuthor: String
+    createdAt: String
+    comments: [Comment]!
   }
 
-  // input BookInput {
-  //   authors: [String]
-  //   description: String!
-  //   bookId: String!
-  //   image: String
-  //   link: String
-  //   title: String!
+  type Comment {
+    _id: ID
+    commentText: String
+    commentAuthor: String
+    createdAt: String
+  }
+
+  // type Auth {
+  //   token: ID!
+  //   user: User
   // }
 
   type Query {
-    me: User
+    users: [User]
+    user(username: String!): User
+    blogs(username: String): [Blog]
+    blogs(blogId: ID!): Blog
   }
 
   type Mutation {
-    login(email: String!, password: String!): Auth
-    addUser(username: String!, email: String!, password: String!): Auth
-    saveBook(bookData: BookInput!): User
-    removeBook(bookId: ID!): User
+    addUser(username: String!, email: String!, password: String!): 
+    login(email: String!, password: String!): 
+    addBlog(blogText: String!, blogAuthor: String!): Blog
+    addComment(
+      blogId: ID!
+      commentText: String!
+      commentAuthor: String!
+    ): Blog
+    removeBlog(blogId: ID!): Blog
+    removeComment(blogId: ID!, commentId: ID!): Blog
   }
 `;
 
 module.exports = typeDefs;
+
+// Lines 40 and 41 had Auth at the end.
