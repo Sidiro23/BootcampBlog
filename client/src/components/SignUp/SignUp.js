@@ -1,8 +1,11 @@
 import React, {useState} from 'react'
 import { checkPassword, validateEmail, validateName } from '../utils/helpers'
+// const bcrypt = require ('bcrypt');
+// const saltRounds = 10;
+
 import {resolvers} from '../../../../server/schemas/resolvers'
 
-function SignupForm(){
+function Signup(){
     const [email, setEmail]=useState('');
     const [userName, setUsername]=useState('');
     const [firstName, setFirstName]=useState('');
@@ -46,7 +49,7 @@ function SignupForm(){
             );
             return
         }
-        if(!validatekName(lastName)){
+        if(!validateName(lastName)){
             setErrorMessage(
                 'Please enter a last name'
             );
@@ -62,8 +65,8 @@ function SignupForm(){
     
     };
     return(
-    <div class="row">
-    <div class="col-md-12">
+    <div className="row">
+    <div className="col-md-12">
       <form action="index.html" method="post">
         <h1> Sign Up </h1>
         
@@ -115,4 +118,4 @@ function SignupForm(){
     </div>
   )
 }
-export default SignupForm;
+export default Signup;

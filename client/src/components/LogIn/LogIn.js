@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import {resolvers} from '../../../../server/schemas/resolvers'
 
 
-function LogIn(){
+function Login(){
     const [errorMessages, setErrorMessages] = useState({});
     const [isSubmitted, setIsSubmitted] = useState(false);
     const errors = {
@@ -12,16 +12,16 @@ function LogIn(){
       const handleSubmit = (event) =>{
         event.preventDefault()
         var {userName, password} = document.forms[0];
-        const userData = database.find((user) => user.userName === userName.value);
-        if (userData) {
-            if (userData.password !== password.value) {
-              setErrorMessages({ name: "password", message: errors.password });
-            } else {
-              setIsSubmitted(true);
-            }
-          } else {
-            setErrorMessages({ name: "userName", message: errors.userName });
-          }
+        // const userData = database.find((user) => user.userName === userName.value);
+        // if (userData) {
+        //     if (userData.password !== password.value) {
+        //       setErrorMessages({ name: "password", message: errors.password });
+        //     } else {
+        //       setIsSubmitted(true);
+        //     }
+        //   } else {
+        //     setErrorMessages({ name: "userName", message: errors.userName });
+        //   }
         }
         const renderForm =(
           <form>
@@ -30,15 +30,16 @@ function LogIn(){
           <button type='button'onClick= {[handleSubmit, resolvers]}>Log In</button>
         </form>
         )
-        render(
+        return(
             <div id="formContent">
-                <h2 class="active"> Sign In </h2>
-                {isSubmitted ? <div>User is successfully logged in</div> : renderForm}
+                <h2 className="active"> Sign In </h2>
+                {/* {isSubmitted ? <div>User is successfully logged in</div> : renderForm} */}
+                {renderForm}
             </div>
         ) 
       };
 
-export default LogIn;
+export default Login;
 
 
 
