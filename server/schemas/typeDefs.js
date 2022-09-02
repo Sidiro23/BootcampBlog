@@ -20,7 +20,7 @@ const typeDefs = gql`
     commentText: String
     commentAuthor: String
     createdAt: String
-
+  }
   type Query {
     users: [User]
     user(username: String!): User
