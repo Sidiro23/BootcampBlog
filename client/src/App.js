@@ -1,23 +1,25 @@
 import React from 'react'
 import './App.css'
-import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-import Header from './components/Header/Header'
+import Homepage from './components/Homepage/Homepage'
+// import Header from './components/Header/Header'
 import Footer from './components/Footer/Footer'
-import LogIn from './components/Login/Login'
-import SignUp from './components/Signup/Signup'
+import Login from './components/LogIn/LogIn'
+import Signup from './components/SignUp/SignUp'
 
 
 
 function App(){
   return (
     <div >
-      <Header/>
-      <LogIn />
-      <SignUp />
+      <Homepage />
+      {/* <Header/> */}
+      <Login />
+      <Signup />
       <Footer/>
     </div>
   )
 }
 
-export default App
+export default App;
