@@ -44,4 +44,3 @@ const typeDefs = gql`
 
 module.exports = typeDefs;
 
-// Lines 40 and 41 had Auth at the end.
