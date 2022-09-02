@@ -29,7 +29,7 @@ const blogSchema = new Schema({
         type: String,
         required: true,
         minlength: 1,
-        maxlength: 280,
+        // maxlength: 280,
       },
       commentAuthor: {
         type: String,

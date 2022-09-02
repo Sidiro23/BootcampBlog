@@ -8,7 +8,6 @@ const typeDefs = gql`
     password: String
     blogs: [Blog]!
   }
-
   type Blog {
     _id: ID
     blogText: String
@@ -16,15 +15,11 @@ const typeDefs = gql`
     createdAt: String
     comments: [Comment]!
   }
-
   type Comment {
     _id: ID
     commentText: String
     commentAuthor: String
     createdAt: String
-  }
-
-   
 
   type Query {
     users: [User]
@@ -32,7 +27,6 @@ const typeDefs = gql`
     blogs(username: String): [Blog]
     blog(blogId: ID!): Blog
   }
-
   type Mutation {
     addUser(username: String!, email: String!, password: String!):User
     login(email: String!, password: String!): User
