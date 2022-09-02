@@ -38,6 +38,7 @@ const typeDefs = gql`
     ): Blog
     removeBlog(blogId: ID!): Blog
     removeComment(blogId: ID!, commentId: ID!): Blog
+    updateBlog(id: ID!, blogText: String!): Blog
   }
 `;
 
