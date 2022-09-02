@@ -22,12 +22,29 @@ function LogIn(){
             setErrorMessages({ name: "userName", message: errors.userName });
           }
         }
+        const renderForm =(
+          <form>
+          <input type="text"  name="login" placeholder="login"/>
+          <input type="text"   name="login" placeholder="password"/>
+          <button type='button'onClick= {handleSubmit}>Log In</button>
+        </form>
+        )
+        render(
+            <div id="formContent">
+                <h2 class="active"> Sign In </h2>
+                {isSubmitted ? <div>User is successfully logged in</div> : renderForm}
+            </div>
+        ) 
       };
 
+export default LogIn;
 
 
-//JSX code for error message
-const renderErrorMessage = (name) =>
-  name === errorMessages.name && (
-    <div className="error">{errorMessages.message}</div>
-  );
+
+
+
+// //JSX code for error message
+// const setErrorMessage = (name) =>
+//   name === errorMessages.name && (
+//     <div className="error">{errorMessages.message}</div>
+//   );
