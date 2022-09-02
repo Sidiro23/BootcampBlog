@@ -3,6 +3,8 @@ import { checkPassword, validateEmail, validateName } from '../utils/helpers'
 // const bcrypt = require ('bcrypt');
 // const saltRounds = 10;
 
+import {resolvers} from '../../../../server/schemas/resolvers'
+
 function Signup(){
     const [email, setEmail]=useState('');
     const [userName, setUsername]=useState('');
@@ -104,7 +106,7 @@ function Signup(){
            onChange ={handleInputChange}
            />
       
-        <button type="button" onClick={handleFormSubmit}>Sign Up</button>
+        <button type="button" onClick={[handleFormSubmit, resolvers]}>Sign Up</button>
         
     </form>
     {errorMessage &&(
