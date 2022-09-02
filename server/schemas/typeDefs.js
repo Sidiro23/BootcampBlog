@@ -20,7 +20,7 @@ const typeDefs = gql`
     commentText: String
     commentAuthor: String
     createdAt: String
-
+  }
   type Query {
     users: [User]
     user(username: String!): User
@@ -43,4 +43,3 @@ const typeDefs = gql`
 
 module.exports = typeDefs;
 
-// Lines 40 and 41 had Auth at the end.
