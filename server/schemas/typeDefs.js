@@ -24,10 +24,7 @@ const typeDefs = gql`
     createdAt: String
   }
 
-   type Auth {
-     token: ID!
-     user: User
-   }
+   
 
   type Query {
     users: [User]
@@ -37,8 +34,8 @@ const typeDefs = gql`
   }
 
   type Mutation {
-    addUser(username: String!, email: String!, password: String!):Auth 
-    login(email: String!, password: String!): Auth
+    addUser(username: String!, email: String!, password: String!):User
+    login(email: String!, password: String!): User
     addBlog(blogText: String!, blogAuthor: String!): Blog
     addComment(
       blogId: ID!
@@ -52,4 +49,3 @@ const typeDefs = gql`
 
 module.exports = typeDefs;
 
-// Lines 40 and 41 had Auth at the end.
