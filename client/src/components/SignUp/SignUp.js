@@ -1,7 +1,6 @@
 import React, {useState} from 'react'
 import { checkPassword, validateEmail, validateName } from '../utils/helpers'
-const bcrypt = require ('bcrypt');
-const saltRounds = 10;
+import {resolvers} from '../../../../server/schemas/resolvers'
 
 function SignupForm(){
     const [email, setEmail]=useState('');
@@ -104,7 +103,7 @@ function SignupForm(){
            onChange ={handleInputChange}
            />
       
-        <button type="button" onClick={handleFormSubmit}>Sign Up</button>
+        <button type="button" onClick={[handleFormSubmit, resolvers]}>Sign Up</button>
         
     </form>
     {errorMessage &&(
