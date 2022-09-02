@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import {resolvers} from '../../../../server/schemas/resolvers'
 
 
 function LogIn(){
@@ -26,7 +27,7 @@ function LogIn(){
           <form>
           <input type="text"  name="login" placeholder="login"/>
           <input type="text"   name="login" placeholder="password"/>
-          <button type='button'onClick= {handleSubmit}>Log In</button>
+          <button type='button'onClick= {[handleSubmit, resolvers]}>Log In</button>
         </form>
         )
         render(
