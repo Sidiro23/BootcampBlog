@@ -24,10 +24,10 @@ class Header extends Component {
 
         <div className="content">
           <Route exact path="/" render={()=> <Redirect to="/Homepage" />} />
-          <Route path="/about" component={Homepage} />
-          <Route path="/portfolio" component={DashBoard} />
-          <Route path="/contact" component={Blog} />
-          <Route path="/resume" component={Comment} />
+          <Route path="/Homepage" component={Homepage} />
+          <Route path="/Dashboard" component={DashBoard} />
+          <Route path="/Blog" component={Blog} />
+          <Route path="/Comment" component={Comment} />
         </div>
       </HashRouter>
 
