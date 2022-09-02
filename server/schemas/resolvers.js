@@ -75,6 +75,15 @@ const resolvers = {
         }
       );
     },
+    updateBlog: async (parent, { id, blogText }) => {
+      // Find and update the matching class using the destructured args
+      return await Blog.findOneAndUpdate(
+        { _id: id }, 
+        { blogText },
+        // Return the newly updated object instead of the original
+        { new: true }
+      );
+    },
     removeBlog: async (parent, { blogId }) => {
       return Blog.findOneAndDelete({ _id: blogId });
     },

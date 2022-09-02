@@ -20,7 +20,7 @@ const typeDefs = gql`
     commentText: String
     commentAuthor: String
     createdAt: String
-
+  }
   type Query {
     users: [User]
     user(username: String!): User
@@ -38,6 +38,7 @@ const typeDefs = gql`
     ): Blog
     removeBlog(blogId: ID!): Blog
     removeComment(blogId: ID!, commentId: ID!): Blog
+    updateBlog(id: ID!, blogText: String!): Blog
   }
 `;
 
