@@ -28,8 +28,8 @@ export default function Comment() {
           </form>
         </Modal.Body>
         <Modal.Footer>
-          <button className="submitBtn">Submit</button>
-          <button className="closeBtn">Close</button>
+          <Button>Submit</Button>
+          <Button>Close</Button>
         </Modal.Footer>
       </Modal>
     </div>
