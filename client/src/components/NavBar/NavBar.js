@@ -1,9 +1,10 @@
 import React from 'react';
+import './NavBar.css'
 import { Nav } from 'react-bootstrap';
 
 function NavBar({currentPage, handlePageChange}){
     return(
-        <ul className= 'nav nav-tabs'>
+        <ul className= 'nav nav-tabs bg-dark '>
             <li className='nav-item'>
                 <a href='#home'
                 onClick={()=> handlePageChange('Home')}

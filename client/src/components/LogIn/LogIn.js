@@ -13,7 +13,7 @@ export default function Login() {
           </div>
           <div className="container-user">
             <input type="password" name="" required=""></input>
-            <label>Pasword</label>
+            <label>Password</label>
           </div>
           <a href="#">
             <span></span>
