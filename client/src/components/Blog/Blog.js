@@ -1,6 +1,6 @@
 import React from "react";
-import { validateBlogPost} from "../utils/helpers";
-import {resolvers} from "../../../.././server/schemas/resolvers";
+// import { validateBlogPost} from "../utils/helpers";
+// import {resolvers} from "../../../.././server/schemas/resolvers";
 
 function Blog(){
     return(
@@ -10,7 +10,7 @@ function Blog(){
                     <textarea className="form-control-lg" placeholder="What's on your mind?"/>
                 </div>
                 <div class="d-grid gap-2">
-                <button class="btn btn-primary" type="button" onClick={[validateBlogPost, resolvers]}>Button</button>
+                <button class="btn btn-primary" type="button">Button</button>
                 </div> 
             </form>
         </div>
@@ -18,3 +18,5 @@ function Blog(){
 };
 
 export default Blog;
+
+// onClick={[validateBlogPost, resolvers]}
