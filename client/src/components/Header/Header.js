@@ -1,38 +1,14 @@
-import React, {Component} from "react";
-import {Route, Redirect, HashRouter} from "react-router-dom";
-import Homepage from './components/Homepage/Homepage'
-import DashBoard from './components/Dashboard/Dashboard'
-import NavBar from './components/NavBar/Navbar'
-import Blog from './components/Blog/Blog'
-import Comment from './components/Comment/Comment'
+import React from 'react';
 
-
-
-
-
-
-
-
-
-class Header extends Component {
-  render(){
-    return (
-      <HashRouter>
-        <header>
-          <NavBar />
-        </header>
-
-        <div className="content">
-          <Route exact path="/" render={()=> <Redirect to="/Homepage" />} />
-          <Route path="/Homepage" component={Homepage} />
-          <Route path="/Dashboard" component={DashBoard} />
-          <Route path="/Blog" component={Blog} />
-          <Route path="/Comment" component={Comment} />
-        </div>
-      </HashRouter>
-
-    );
-  }
-}
+const Header = () => {
+  return (
+    <header className="bg-primary text-light mb-4 py-3 flex-row align-center">
+      <div className="container flex-row justify-space-between-lg justify-center align-center">
+        <h1 className="m-0">Bootcamp Blog</h1>
+        <p className="m-0">Text goes here</p>
+      </div>
+    </header>
+  );
+};
 
 export default Header;
