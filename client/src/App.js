@@ -9,6 +9,7 @@ import Footer from "./components/Footer/Footer";
 import Comment from './components/Comment/Comment'
 import Blog from './components/Blog/Blog';
 import Login from './components/LogIn/LogIn'
+import NavBar from './components/NavBar/NavBar'
 // import Signup from './components/SignUp/SignUp'
 // import Login from './components/LogIn/LogIn'
 //import Signup from './components/SignUp/SignUp'
@@ -23,6 +24,9 @@ function App() {
     <ApolloProvider client={client}>
       <div className="flex-column justify-flex-start min-100-vh">
         <Header />
+        <div>
+          <NavBar/>
+        </div>
         <div className="container">
           <Login />
           <Homepage />
