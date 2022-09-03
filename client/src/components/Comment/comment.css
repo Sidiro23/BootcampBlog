@@ -1,5 +1,5 @@
 .modal-content {
-  background-color: #333f48;
+  background-color: #0d6efd;
 }
 .userDiv {
   display: flex;
@@ -18,8 +18,8 @@
 .comment {
   color: white;
 }
-.closeBtn {
-  background-color: #bf5700;
+/* .closeBtn {
+  background-color: #0d6efd;
   border-radius: 15px;
   color: white;
   height: 40px;
@@ -28,14 +28,14 @@
   box-shadow: 0px 1px 0px 2px rgba(20,19,18,1);
 }
 .submitBtn {
-  background-color: #bf5700;
+  background-color: #0d6efd;
   border-radius: 15px;
   color: white;
   height: 40px;
   width: 80px;
   font-size: 17px;
   box-shadow: 0px 1px 0px 2px rgba(20,19,18,1);
-}
+} */
 h5 {
   color: white;
 }
