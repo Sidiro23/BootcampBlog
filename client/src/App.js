@@ -8,18 +8,13 @@ import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Homepage from './components/Homepage/Homepage'
-
+import Header from './components/Header/Header'
 import Comment from './components/Comment/Comment'
 import Footer from './components/Footer/Footer'
 import Blog from './components/Blog/Blog';
 // import Login from './components/LogIn/LogIn'
 // import Signup from './components/SignUp/SignUp'
-// import Header from './components/Header/Header'
 
-import Header from './components/Header/Header'
-import Footer from './components/Footer/Footer'
-//import Login from './components/LogIn/LogIn'
-//import Signup from './components/SignUp/SignUp'
 
 const client = new ApolloClient({
   uri: '/graphql',
@@ -34,6 +29,8 @@ function App(){
         <Header />
         <div className="container">
           <Homepage />
+          <Blog />
+          <Comment />
         </div>
         <Footer />
       </div>
