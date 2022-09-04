@@ -4,7 +4,7 @@ import { Nav } from 'react-bootstrap';
 
 function NavBar({currentPage, handlePageChange}){
     return(
-        <ul className= 'nav nav-tabs bg-dark '>
+        <ul className= 'nav nav-tabs landingTabs'>
             {/* <li className='nav-item'>
                 <a href='/'
                 onClick={()=> handlePageChange('Home')}
@@ -31,7 +31,7 @@ function NavBar({currentPage, handlePageChange}){
                 Blog
             </a>
             </li> */}
-            <li className='nav nav-tabs'>
+            <li className='nav nav-tabs bg-dark signupTab'>
                 <a href='/signup'
                 onClick={()=> handlePageChange('SignUp')}
                 className={currentPage ==='SignUp'?'nav-link active':'nav-link'}
@@ -39,7 +39,7 @@ function NavBar({currentPage, handlePageChange}){
                     Sign Up
                 </a>
             </li>
-            <li className='nav nav-tabs'>
+            <li className='nav nav-tabs bg-dark loginTab'>
                 <a
                 href='/login'
                 onClick={()=> handlePageChange('LogIn')}
