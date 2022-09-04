@@ -1,22 +1,81 @@
 import React, { useState } from "react";
-import "./Signup.css";
+// import { Link } from 'react-router-dom';
+import { useMutation } from '@apollo/client';
+import { ADD_USER } from '../../utils/mutations';
 
-export default function SignUp() {
+import "./Signup.css";
+import Auth from '../../utils/auth';
+
+const Signup = () => {
+  const [formState, setFormState] = useState({
+    username: '',
+    email: '',
+    password: '',
+  });
+  const [addUser, { error, data }] = useMutation(ADD_USER);
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
+  };
+
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    console.log(formState);
+
+    try {
+      const { data } = await addUser({
+        variables: { ...formState },
+      });
+
+      Auth.login(data.addUser.token);
+    // data.addUser;
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
   return (
     <div>
       <div className="container-signup">
         <h2>Sign Up</h2>
-        <form>
+        <form onSubmit={handleFormSubmit}>
           <div className="container-user">
-            <input type="text" name="" required=""></input>
+            <input 
+            className="form-input"
+            placeholder="Your email"
+            name="email"
+            type="email"
+            value={formState.email}
+            onChange={handleChange}
+            />
             <label>Email</label>
           </div>
           <div className="container-user">
-            <input type="text" name="" required=""></input>
+            <input 
+            className="form-input"
+            placeholder="Your username"
+            name="username"
+            type="text"
+            value={formState.name}
+            onChange={handleChange}
+            required=""
+            />
             <label>Username</label>
           </div>
           <div className="container-user">
-            <input type="password" name="" required=""></input>
+            <input
+             className="form-input"
+             placeholder="******"
+             name="password"
+             type="password"
+             value={formState.password}
+             onChange={handleChange}
+             />
             <label>Pasword</label>
           </div>
           <a href="/">
@@ -26,11 +85,20 @@ export default function SignUp() {
             <span></span>
             Sign Up
           </a>
+          <button
+            className="btn btn-block btn-primary"
+            style={{ cursor: 'pointer' }}
+            type="submit"
+          >
+                  Submit
+          </button>
         </form>
       </div>
     </div>
   );
 }
+
+export default Signup;
 
 // import { checkPassword, validateEmail, validateName } from '../utils/helpers'
 // const bcrypt = require ('bcrypt');
