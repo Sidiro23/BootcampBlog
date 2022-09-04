@@ -1,16 +1,18 @@
 import React from "react";
-import Blog from '../Blog/Blog';
-import Comment from "../Comment/Comment";
-import Dashboard from '../DashBoard/DashBoard';
-import HomePageNav from "../NavBar/HomePageNav"
+import { useQuery } from '@apollo/client';
+import { QUERY_BLOGS } from '../../utils/queries';
+import BlogList from "../BlogList/index";
 
 export default function Homepage() {
+  const { data } = useQuery(QUERY_BLOGS);
+  const blogs = data?.blogs || [];
+
   return (
     <div className="container-home">
-      <HomePageNav />
-      <Blog />
-      <Comment />
-      <Dashboard />
+      <BlogList
+      blogs={blogs}
+      title="" 
+      />
     </div>
   );
 }
