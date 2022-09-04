@@ -1,0 +1,14 @@
+.homepageTabs {
+    display: flex;
+    flex-direction: column;
+    width: 125px;
+    position: relative;
+    left: 40px;
+    top: 75px;
+  }
+  .homepageTabs li {
+    display: flex;
+    justify-content: center;
+    border-radius: 35px;
+    margin: 2px;
+  }
