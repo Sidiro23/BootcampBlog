@@ -33,7 +33,7 @@ const Signup = () => {
       });
 
       Auth.login(data.addUser.token);
-    // data.addUser;
+      // data.addUser;
     } catch (e) {
       console.error(e);
     }
@@ -78,15 +78,8 @@ const Signup = () => {
              />
             <label>Pasword</label>
           </div>
-          <a href="/">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            Sign Up
-          </a>
           <button
-            className="btn btn-block btn-primary"
+            className="btn btn-block btn-dark"
             style={{ cursor: 'pointer' }}
             type="submit"
           >

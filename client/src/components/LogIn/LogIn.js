@@ -1,33 +1,71 @@
 import React, { useState } from "react";
+import { useMutation } from "@apollo/client";
+import { LOGIN_USER } from "../../utils/mutations";
 import "./login.css";
-
-export default function Login() {
+import Auth from "../../utils/auth";
+const Login = (props) => {
+  const [formState, setFormState] = useState({ email: '', password: '' });
+  const [login, { error, data }] = useMutation(LOGIN_USER);
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
+  };
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    console.log(formState);
+    try {
+      const { data } = await login({
+        variables: { ...formState},
+      });
+      Auth.login(data.login.token);
+    } catch (e) {
+      console.error(e)
+    }
+  };
   return (
     <div>
       <div className="container-login">
         <h2>Login</h2>
-        <form>
+        <form onSubmit={handleFormSubmit}>
           <div className="container-user">
-            <input type="text" name="" required=""></input>
-            <label>Username</label>
+            <input
+            className="form-input"
+            placeholder=""
+            name="email"
+            type="text"
+            value={formState.email}
+            onChange={handleChange}
+            required=""
+            />
+            <label>Email</label>
           </div>
           <div className="container-user">
-            <input type="password" name="" required=""></input>
+            <input
+            className="form-input"
+            placeholder=""
+            name="password"
+            type="password"
+            value={formState.password}
+            onChange={handleChange}
+            />
             <label>Password</label>
           </div>
-          <a href="/">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
+          <button
+            className="btn btn-block btn-dark"
+            style={{ cursor: "pointer" }}
+            type="submit"
+          >
             Login
-          </a>
+          </button>
         </form>
       </div>
     </div>
   );
 }
-
+export default Login;
 // import {resolvers} from '../../../../server/schemas/resolvers'
 // function Login(){
 //     const [errorMessages, setErrorMessages] = useState({});
