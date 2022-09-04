@@ -48,7 +48,7 @@
 .container-login .container-user input:valid ~ label {
   top: -20px;
   left: 0;
-  color: #03e9f4;
+  color: #fff;
   font-size: 12px;
 }
 
@@ -57,7 +57,7 @@
   display: flex;
   justify-content: center;
   padding: 10px 20px;
-  color: #03e9f4;
+  color: #fff;
   font-size: 16px;
   text-decoration: none;
   text-transform: uppercase;
@@ -65,6 +65,10 @@
   transition: 0.5s;
   margin-top: 40px;
   letter-spacing: 4px;
+}
+.btn {
+  display:flex;
+  margin:auto;
 }
 /* .container-login a span {
   position: absolute;
