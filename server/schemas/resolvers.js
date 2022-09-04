@@ -1,6 +1,6 @@
 const { AuthenticationError } = require("apollo-server-express");
 const { User, Blog } = require("../models");
-// const { signToken } = require("../utils/auth");
+const { signToken } = require("../utils/auth");
 
 const resolvers = {
   Query: {
@@ -24,10 +24,10 @@ const resolvers = {
       // First we create the user
       const user = await User.create({ username, email, password });
       // To reduce friction for the user, we immediately sign a JSON Web Token and log the user in after they are created
-      //   const token = signToken(user);
+        const token = signToken(user);
       //   // Return an `Auth` object that consists of the signed token and user's information
-      //   return { token, user };
-      return user;
+        return { token, user };
+      // return user;
     },
     login: async (parent, { email, password }) => {
       // Look up the user by the provided email address. Since the `email` field is unique, we know that only one person will exist with that email
@@ -47,11 +47,11 @@ const resolvers = {
       }
 
       // If email and password are correct, sign user into the application with a JWT
-      //   const token = signToken(user);
+        const token = signToken(user);
 
       //   // Return an `Auth` object that consists of the signed token and user's information
-      //   return { token, user };
-      return user;
+        return { token, user };
+      // return user;
     },
     addBlog: async (parent, { blogText, blogAuthor }) => {
       const blog = await Blog.create({ blogText, blogAuthor });
