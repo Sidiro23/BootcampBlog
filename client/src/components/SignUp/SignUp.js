@@ -19,7 +19,7 @@ export default function SignUp() {
             <input type="password" name="" required=""></input>
             <label>Pasword</label>
           </div>
-          <a href="#">
+          <a href="/">
             <span></span>
             <span></span>
             <span></span>
