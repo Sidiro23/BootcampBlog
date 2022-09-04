@@ -1,11 +1,12 @@
 import React from 'react';
+import './NavBar.css'
 import { Nav } from 'react-bootstrap';
 
 function NavBar({currentPage, handlePageChange}){
     return(
-        <ul className= 'nav nav-tabs'>
+        <ul className= 'nav nav-tabs bg-dark '>
             <li className='nav-item'>
-                <a href='#home'
+                <a href='/'
                 onClick={()=> handlePageChange('Home')}
                 className={currentPage === 'Home' ? 'nav-link active': 'nav-link'}
                 >
@@ -31,7 +32,7 @@ function NavBar({currentPage, handlePageChange}){
             </a>
             </li>
             <li className='nav nav-tabs'>
-                <a href='#signup'
+                <a href='/signup'
                 onClick={()=> handlePageChange('SignUp')}
                 className={currentPage ==='SignUp'?'nav-link active':'nav-link'}
                 >
@@ -40,7 +41,7 @@ function NavBar({currentPage, handlePageChange}){
             </li>
             <li className='nav nav-tabs'>
                 <a
-                href='#login'
+                href='/login'
                 onClick={()=> handlePageChange('LogIn')}
                 className={currentPage === 'LogIn'? 'nav-link active':'nav-link'}
                 >
