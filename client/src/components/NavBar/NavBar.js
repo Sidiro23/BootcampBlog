@@ -3,7 +3,7 @@ import "./NavBar.css";
 
 function NavBar({ currentPage, handlePageChange }) {
   return (
-    <ul className="nav nav-tabs homepageTabs">
+    <ul className="nav nav-tabs homeTabs">
       <li className="nav nav-tabs bg-dark homeTab">
         <a
           href="/"
