@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {UPDATE_BLOG, DELETE_BLOG} from '../../utils/mutations';
 import { QUERY_BLOGS, QUERY_SINGLE_BLOG } from '../../utils/queries';
+import { useMutation } from '@apollo/client';
 
 export default function DashBoard() {
   const [formState, setFormSate]= useState({
