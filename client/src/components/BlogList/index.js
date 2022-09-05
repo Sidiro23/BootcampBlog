@@ -26,8 +26,7 @@ const BlogList = ({ blogs, title }) => {
             <div className="card-body bg-light p-2">
               <p>{blog.blogText}</p>
             </div>
-            <Button>Read More</Button>
-            <Link
+            
 
           <div key={blog._id} className="container-blog">
             <div className="card">
@@ -42,16 +41,16 @@ const BlogList = ({ blogs, title }) => {
                 <p className="card-text">{blog.blogText}</p>
                 <Button>Read More</Button>
               </div>
-              {/* <Link
+              { <Link
 
               className="btn btn-primary btn-block btn-squared"
               to={`/blogs/${blog._id}`}
             >
               Join the discussion on this blogs.
 
-            </Link>
+            
 
-            </Link> */}
+            </Link> }
             </div>
 
           </div>

@@ -3,14 +3,7 @@ import {UPDATE_BLOG, DELETE_BLOG} from '../../utils/mutations';
 import { QUERY_BLOGS, QUERY_SINGLE_BLOG } from '../../utils/queries';
 
 export default function DashBoard() {
-<<<<<<< HEAD
-  return (
-    <div>DashBoard</div>
-  )
-}
 
-
-=======
   const updateBlog = useMutation(UPDATE_BLOG);
   const deleteBlog = useMutation(DELETE_BLOG);
   const allBlogs = useMutation(QUERY_BLOGS);
@@ -38,4 +31,4 @@ export default function DashBoard() {
 
 </div>
   )};
->>>>>>> 751db2e0f402451821892989577a0391810e61bf
+
