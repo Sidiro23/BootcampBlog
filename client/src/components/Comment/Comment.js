@@ -2,8 +2,44 @@ import React from "react";
 import "./comment.css";
 import { Button, Modal } from "react-bootstrap";
 import { useState } from "react";
+import { useMutation } from '@apollo/client';
+import { ADD_COMMENT } from '../../utils/mutations';
+import Auth from '../../utils/auth';
 
-export default function Comment() {
+const CommentForm = ({ blogId }) => {
+  const [commentText, setCommentText] = useState('');
+  const [characterCount, setCharacterCount] = useState(0);
+
+  const [addComment, { error }] = useMutation(ADD_COMMENT);
+
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+
+    try {
+      const { data } = await addComment({
+        variables: {
+          blogId,
+          commentText,
+          commentAuthor: Auth.getProfile().data.username,
+        },
+      });
+
+      setCommentText('');
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+
+    if (name === 'commentText' && value.length <= 280) {
+      setCommentText(value);
+      setCharacterCount(value.length);
+    }
+  };
+
+ 
   return (
     <div>
       <Button onClick={useState}>Comment</Button>
@@ -13,7 +49,7 @@ export default function Comment() {
           <Button className="btn-close"></Button>
         </Modal.Header>
         <Modal.Body>
-          <form>
+          <form onSubmit={handleFormSubmit}>
             <div className="mb-3 userDiv">
               <div className="avatar"></div>
               <label className="col-form-label username">Matt_05</label>
@@ -23,7 +59,7 @@ export default function Comment() {
             </div>
             <div className="mb-3">
               <label className="col-form-label comment">Comment:</label>
-              <textarea class="form-control"></textarea>
+              <textarea class="form-control" onChange={handleChange}></textarea>
             </div>
           </form>
         </Modal.Body>
@@ -35,3 +71,5 @@ export default function Comment() {
     </div>
   );
 }
+
+export default CommentForm;
