@@ -10,6 +10,7 @@ import NavBar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
 import SignUp from "./components/SignUp/SignUp";
 import Login from "./components/LogIn/LogIn";
+import SingleBlog from "./components/SingleBlog/SingleBlog";
 
 const client = new ApolloClient({
   uri: "/graphql",
@@ -28,6 +29,7 @@ function App() {
               <Route path="/" element={<Homepage />} />
               <Route path="/signup" element={<SignUp />} />
               <Route path="/login" element={<Login />} />
+               <Route path="/blogs/:blogId" element={<SingleBlog/>} />
             </Routes>
           </div>
           <Footer />
