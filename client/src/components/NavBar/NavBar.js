@@ -43,6 +43,15 @@ function NavBar({ currentPage, handlePageChange }) {
           Sign up
         </a>
       </li>
+      <li className="nav nav-tabs bg-dark signupTab">
+        <a
+          href="/login"
+          onClick={() => handlePageChange("SignOut")}
+          className={currentPage === "SignUp" ? "nav-link active" : "nav-link"}
+        >
+          Logout
+        </a>
+      </li>
     </ul>
     </div>
     
