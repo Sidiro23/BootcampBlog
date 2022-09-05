@@ -5,6 +5,7 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import Homepage from "./components/Homepage/Homepage";
+import Dashboard from "./components/DashBoard/DashBoard";
 import Header from "./components/Header/Header";
 import NavBar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
@@ -27,9 +28,10 @@ function App() {
           <div className="container">
             <Routes>
               <Route path="/" element={<Homepage />} />
+              <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/signup" element={<SignUp />} />
               <Route path="/login" element={<Login />} />
-               <Route path="/blogs/:blogId" element={<SingleBlog/>} />
+              <Route path="/blogs/:blogId" element={<SingleBlog />} />
             </Routes>
           </div>
           <Footer />
