@@ -5,13 +5,14 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import Homepage from "./components/Homepage/Homepage";
-import Dashboard from "./components/DashBoard/DashBoard";
+// import Dashboard from "./components/DashBoard/DashBoard";
 import Header from "./components/Header/Header";
 import NavBar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
 import SignUp from "./components/SignUp/SignUp";
 import Login from "./components/LogIn/LogIn";
 import SingleBlog from "./components/SingleBlog/SingleBlog";
+import DashboardTest from "./components/DashBoard/DashBoardTest";
 
 const client = new ApolloClient({
   uri: "/graphql",
@@ -28,7 +29,7 @@ function App() {
           <div className="container">
             <Routes>
               <Route path="/" element={<Homepage />} />
-              <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/dashboard" element={<DashboardTest />} />
               <Route path="/signup" element={<SignUp />} />
               <Route path="/login" element={<Login />} />
               <Route path="/blogs/:blogId" element={<SingleBlog />} />
