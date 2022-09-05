@@ -69,7 +69,7 @@ export default Login;
 // import {resolvers} from '../../../../server/schemas/resolvers'
 // function Login(){
 //     const [errorMessages, setErrorMessages] = useState({});
-//     // const [isSubmitted, setIsSubmitted] = useState(false);
+//     // const [isSubmitt  ed, setIsSubmitted] = useState(false);
 //     const errors = {
 //         userName: "invalid username",
 //         password: "invalid password"

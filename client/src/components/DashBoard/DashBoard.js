@@ -4,9 +4,11 @@ import { QUERY_BLOGS, QUERY_SINGLE_BLOG } from '../../utils/queries';
 import { useMutation } from '@apollo/client';
 
 export default function DashBoard() {
+
   const [formState, setFormSate]= useState({
     blogText: '',
   });
+
   const updateBlog = useMutation(UPDATE_BLOG);
   const deleteBlog = useMutation(DELETE_BLOG);
   const allBlogs = useMutation(QUERY_BLOGS);
@@ -34,3 +36,4 @@ export default function DashBoard() {
 
 </div>
   )};
+
