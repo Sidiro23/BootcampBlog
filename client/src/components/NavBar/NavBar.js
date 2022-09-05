@@ -16,7 +16,7 @@ function NavBar({ currentPage, handlePageChange }) {
       </li>
       <li className="nav nav-tabs bg-dark dashboardTab">
         <a
-          href="#dashboard"
+          href="/dashboard"
           onClick={() => handlePageChange("Dashboard")}
           className={
             currentPage === "Dashboard" ? "nav-link active" : "nav-link"
