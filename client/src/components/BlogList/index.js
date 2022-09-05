@@ -1,5 +1,6 @@
 import React from "react";
 import { Button } from "react-bootstrap";
+import { Link } from 'react-router-dom';
 import CommentCard from "../Comment/CommentCard";
 import Comment from "../Comment/Comment";
 
@@ -24,12 +25,12 @@ const BlogList = ({ blogs, title }) => {
               <p>{blog.blogText}</p>
             </div>
             <Button>Read More</Button>
-            {/* <Link
+            <Link
               className="btn btn-primary btn-block btn-squared"
               to={`/blogs/${blog._id}`}
             >
               Join the discussion on this blogs.
-            </Link> */}
+            </Link>
           </div>
         ))}
     </div>
