@@ -3,7 +3,8 @@ import "./NavBar.css";
 
 function NavBar({ currentPage, handlePageChange }) {
   return (
-    <ul className="nav nav-tabs homeTabs">
+    <div className="container-nav">
+      <ul className="nav nav-tabs homeTabs">
       <li className="nav nav-tabs bg-dark homeTab">
         <a
           href="/"
@@ -15,7 +16,7 @@ function NavBar({ currentPage, handlePageChange }) {
       </li>
       <li className="nav nav-tabs bg-dark dashboardTab">
         <a
-          href="#dashboard"
+          href="/dashboard"
           onClick={() => handlePageChange("Dashboard")}
           className={
             currentPage === "Dashboard" ? "nav-link active" : "nav-link"
@@ -52,6 +53,8 @@ function NavBar({ currentPage, handlePageChange }) {
         </a>
       </li>
     </ul>
+    </div>
+    
   );
 }
 
