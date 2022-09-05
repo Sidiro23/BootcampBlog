@@ -26,7 +26,6 @@ const BlogList = ({ blogs, title }) => {
               </div>
               <div className="card-body">
                 <p className="card-text">{blog.blogText}</p>
-                <Button>Read More</Button>
               </div>
               <Link
               className="btn btn-primary btn-block btn-squared"
