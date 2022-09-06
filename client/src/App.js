@@ -18,6 +18,8 @@ import SignUp from "./components/SignUp/SignUp";
 import Login from "./components/LogIn/LogIn";
 
 import Logout from "./components/Logout/logout";
+import SingleBlog from "./components/SingleBlog/SingleBlog";
+import DashboardTest from "./components/DashBoard/DashBoardTest";
 
 
 const httpLink = createHttpLink({
@@ -34,8 +36,8 @@ const authLink = setContext((_, {headers}) => {
   };
 });
 
-import SingleBlog from "./components/SingleBlog/SingleBlog";
-import DashboardTest from "./components/DashBoard/DashBoardTest";
+// import SingleBlog from "./components/SingleBlog/SingleBlog";
+// import DashboardTest from "./components/DashBoard/DashBoardTest";
 
 
 const client = new ApolloClient({
@@ -54,7 +56,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Homepage />} />
 
-              <Route path="/dashboard" element={<Dashboard />} />
+              {/* <Route path="/dashboard" element={<Dashboard />} /> */}
 
               <Route path="/dashboard" element={<DashboardTest />} />
 

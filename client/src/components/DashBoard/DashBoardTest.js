@@ -1,16 +1,16 @@
 import React from "react";
 import { useQuery } from '@apollo/client';
-import { QUERY_USERS } from '../../utils/queries';
+import { QUERY_BLOGS } from '../../utils/queries';
 import BlogListUser from "../BlogListUser/index";
 
 export default function Homepage() {
-  const { data } = useQuery(QUERY_USERS);
-  const users = data?.users || [];
+  const { data } = useQuery(QUERY_BLOGS);
+  const blogs = data?.blogs || [];
 
   return (
     <div className="container-home">
       <BlogListUser
-      users={users}
+      blogs={blogs}
       title="" 
       />
     </div>
