@@ -82,7 +82,7 @@ const Comment = ({ blogId }) => {
           </Modal>
         </>
       ) : (
-        <p>You need to be logged in to share your blogs. Please </p>
+        <p className="loggedInMessage">You need to be logged in to share your blogs.</p>
       )}
     </div>
   );
