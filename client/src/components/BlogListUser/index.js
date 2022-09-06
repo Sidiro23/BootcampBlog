@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Button } from "react-bootstrap"
+import Edit from "../Edit/Edit";
 
 const BlogListUser = ({
   blogs,
@@ -27,12 +29,13 @@ const BlogListUser = ({
             <div className="card-body">
               <p className="card-text">{blog.blogText}</p>
             </div>
-            <Link
+            <Edit/>
+            {/* <Link
             className="btn btn-dark readMore"
             to={`/blogs/${blog._id}`}
           >
             Read More
-          </Link>
+          </Link> */}
           </div>
         </div>
       ))}

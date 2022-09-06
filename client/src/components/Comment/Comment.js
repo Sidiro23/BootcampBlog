@@ -47,7 +47,7 @@ const Comment = ({ blogId }) => {
     <div>
       {Auth.loggedIn() ? (
         <>
-          <Button onClick={handleShow}>Comment</Button>
+          <Button onClick={handleShow} className="btn-dark">Comment</Button>
           <Modal show={show} id="modal">
             <Modal.Header>
               <h5>Comment</h5>
