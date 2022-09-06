@@ -10,6 +10,8 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { setContext } from "@apollo/client/link/context";
 import Homepage from "./components/Homepage/Homepage";
+import SingleBlog from "./components/SingleBlog/SingleBlog";
+import DashboardTest from "./components/DashBoard/DashBoardTest";
 import Dashboard from "./components/DashBoard/DashBoard";
 // import Dashboard from "./components/DashBoard/DashBoard";
 import Header from "./components/Header/Header";
@@ -34,6 +36,8 @@ const authLink = setContext((_, { headers }) => {
     },
   };
 });
+
+
 
 const client = new ApolloClient({
   link: authLink.concat(httpLink),
