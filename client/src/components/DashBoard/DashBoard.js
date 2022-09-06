@@ -1,66 +1,65 @@
-import React from "react";
-import { gql, useQuery } from "@apollo/client";
+import React from 'react';
+import { Navigate, useParams } from 'react-router-dom';
+import { useQuery } from '@apollo/client';
+
+// import ThoughtForm from '../components/ThoughtForm';
+import BlogListUser from '../BlogListUser/index';
+
+import { QUERY_ME } from '../../utils/queries';
+
 import Auth from '../../utils/auth';
 
-export const QUERY_USERS = gql`
-  query Users {
-    users {
-      _id
-      username
-      email
-      blogs {
-        blogText
-      }
-    }
-  }
-`;
+const DashBoard = () => {
+  const { username: userParam } = useParams();
 
-export default function Dashboard() {
-  const { data, loading, error } = useQuery(QUERY_USERS);
-  console.log(data);
-  console.log(loading);
-  console.log(error);
+  const { loading, data } = useQuery(QUERY_ME
+  );
+
+  const user = data?.me || data?.user || {};
+  // navigate to personal profile page if username is yours
+//   if (Auth.loggedIn() && Auth.getProfile().data.username) {
+    // return <Navigate to="/me" />;
+//   }
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (!Auth.loggedIn()) {
+    return (
+      <h4>
+        You need to be logged in to see this. Use the navigation links above to
+        sign up or log in!
+      </h4>
+    );
+  }
+console.log(data)
   return (
     <div>
-      {Auth.loggedIn() ? (
-        <>
-      <div class="wrap card">
-        <div className="card-header"> Search for post</div>
-        <div className="search card-body">
-          <div class="input-group mb-3">
-            <button class="btn btn-outline-secondary" type="button">
-              Button
-            </button>
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Which post are you looking for?"
-            />
-          </div>
+      <div className="flex-row justify-center mb-3">
+        <h2 className="col-12 col-md-10 bg-dark text-light p-3 mb-5">
+          Viewing {userParam ? `${user.username}'s` : 'your'} profile.
+        </h2>
+
+        <div className="col-12 col-md-10 mb-5">
+          <BlogListUser
+            blogs={user.blogs}
+            title={`${user.username}'s blogs...`}
+            showTitle={false}
+            showUsername={false}
+          />
         </div>
+        {/* {!userParam && (
+          <div
+            className="col-12 col-md-10 mb-3 p-3"
+            style={{ border: '1px dotted #1a1a1a' }}
+          >
+            <ThoughtForm />
+          </div>
+        )} */}
       </div>
-      </>
-) : (
-      <div className="wrap card">
-        <h3 className="card-header">Show all post</h3>
-        <button className="btn btn-primary">Find All</button>
-      </div>
-)
-      }
     </div>
   );
-}
+};
 
-// import {UPDATE_BLOG, DELETE_BLOG} from '../../utils/mutations';
-// import { QUERY_BLOGS, QUERY_SINGLE_BLOG } from '../../utils/queries';
-// import { useMutation } from '@apollo/client';
-
-// export default function DashBoard() {
-//   const [formState, setFormSate]= useState({
-//     blogText: '',
-//   });
-//   const updateBlog = useMutation(UPDATE_BLOG);
-//   const deleteBlog = useMutation(DELETE_BLOG);
-//   const allBlogs = useMutation(QUERY_BLOGS);
-//   const findBlog = useMutation(QUERY_SINGLE_BLOG);
-// ;
+export default DashBoard;
