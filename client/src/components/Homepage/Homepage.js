@@ -1,7 +1,8 @@
 import React from "react";
-import { useQuery } from '@apollo/client';
-import { QUERY_BLOGS } from '../../utils/queries';
+import { useQuery } from "@apollo/client";
+import { QUERY_BLOGS } from "../../utils/queries";
 import BlogList from "../BlogList/index";
+import Auth from "../../utils/auth";
 
 export default function Homepage() {
   const { data } = useQuery(QUERY_BLOGS);
@@ -9,10 +10,7 @@ export default function Homepage() {
 
   return (
     <div className="container-home">
-      <BlogList
-      blogs={blogs}
-      title="" 
-      />
+      <BlogList blogs={blogs} title="" />
     </div>
   );
 }
