@@ -25,6 +25,7 @@ const SingleBlog = () => {
     return <div>Loading...</div>;
   }
   return (
+    
     <div className="my-3">
       <h3 className="card-header bg-dark text-light p-2 m-0">
         {blog.blogAuthor} <br />

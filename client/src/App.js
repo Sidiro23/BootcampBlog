@@ -1,37 +1,37 @@
 import React from "react";
-import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from "@apollo/client";
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  createHttpLink,
+} from "@apollo/client";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { setContext } from '@apollo/client/link/context';
-
+import { setContext } from "@apollo/client/link/context";
 import Homepage from "./components/Homepage/Homepage";
 import SingleBlog from "./components/SingleBlog/SingleBlog";
 import DashboardTest from "./components/DashBoard/DashBoardTest";
-
 import Dashboard from "./components/DashBoard/DashBoard";
-
 // import Dashboard from "./components/DashBoard/DashBoard";
-
 import Header from "./components/Header/Header";
 import NavBar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
 import SignUp from "./components/SignUp/SignUp";
 import Login from "./components/LogIn/LogIn";
-
-import Logout from "./components/Logout/logout";
+import SignOut from "./components/Logout/logout";
 
 
 const httpLink = createHttpLink({
-  uri: '/graphql',
-})
+  uri: "/graphql",
+});
 
-const authLink = setContext((_, {headers}) => {
-  const token = localStorage.getItem('id_token');
+const authLink = setContext((_, { headers }) => {
+  const token = localStorage.getItem("id_token");
   return {
     headers: {
       ...headers,
-      authorization: token ? `Bearer ${token}` : '',
+      authorization: token ? `Bearer ${token}` : "",
     },
   };
 });
@@ -60,10 +60,9 @@ function App() {
 
               <Route path="/signup" element={<SignUp />} />
               <Route path="/login" element={<Login />} />
-              <Route path="/logout" element={<Logout />} />
+              <Route path="/SignOut" element={<SignOut />} />
 
               <Route path="/blogs/:blogId" element={<SingleBlog />} />
-
             </Routes>
           </div>
           <Footer />

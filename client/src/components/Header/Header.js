@@ -1,4 +1,7 @@
 import React from 'react';
+import Auth from "../../utils/auth";
+
+  
 
 export default function Header() {
   return (
@@ -7,6 +10,9 @@ export default function Header() {
         <h1 className="m-0">Bootcamp Blog</h1>
         <p className="m-0">Text goes here</p>
       </div>
+      <div>
+     
+</div>
     </header>
   );
 };
