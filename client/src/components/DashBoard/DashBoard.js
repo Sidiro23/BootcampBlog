@@ -1,5 +1,6 @@
 import React from "react";
 import { gql, useQuery } from "@apollo/client";
+import Auth from '../../utils/auth';
 
 export const QUERY_USERS = gql`
   query Users {
@@ -21,6 +22,8 @@ export default function Dashboard() {
   console.log(error);
   return (
     <div>
+      {Auth.loggedIn() ? (
+        <>
       <div class="wrap card">
         <div className="card-header"> Search for post</div>
         <div className="search card-body">
@@ -36,11 +39,14 @@ export default function Dashboard() {
           </div>
         </div>
       </div>
-
+      </>
+) : (
       <div className="wrap card">
         <h3 className="card-header">Show all post</h3>
         <button className="btn btn-primary">Find All</button>
       </div>
+)
+      }
     </div>
   );
 }

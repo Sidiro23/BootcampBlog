@@ -19,9 +19,8 @@ import NavBar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
 import SignUp from "./components/SignUp/SignUp";
 import Login from "./components/LogIn/LogIn";
-import Logout from "./components/Logout/logout";
-import SingleBlog from "./components/SingleBlog/SingleBlog";
-import DashboardTest from "./components/DashBoard/DashBoardTest";
+import SignOut from "./components/Logout/logout";
+
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -61,7 +60,7 @@ function App() {
 
               <Route path="/signup" element={<SignUp />} />
               <Route path="/login" element={<Login />} />
-              <Route path="/logout" element={<Logout />} />
+              <Route path="/SignOut" element={<SignOut />} />
 
               <Route path="/blogs/:blogId" element={<SingleBlog />} />
             </Routes>
