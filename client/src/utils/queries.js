@@ -6,10 +6,10 @@ export const QUERY_ME = gql`
       _id
       username
       email
-      thoughts {
+      blogs {
         _id
-        thoughtText
-        thoughtAuthor
+        blogText
+        blogAuthor
         createdAt
       }
     }
@@ -66,6 +66,7 @@ export const QUERY_SINGLE_BLOG = gql`
       createdAt
       comments {
         _id
+        commentAuthor
         commentText
         createdAt
       }

@@ -13,41 +13,30 @@ const BlogListUser = ({
 
   return (
     <div>
-      {/* {showTitle && <h3>{title}</h3>} */}
-      {blogs &&
-        blogs.map((blog) => (
-          <div key={blog._id} className="card mb-3">
-            <h4 className="card-header bg-primary text-light p-2 m-0">
-              {showUsername ? (
-                <Link
-                  className="text-light"
-                  to={`/profiles/${blog.blogAuthor}`}
-                >
-                  {blog.blogAuthor} <br />
-                  <span style={{ fontSize: '1rem' }}>
-                    had this blog on {blog.createdAt}
-                  </span>
-                </Link>
-              ) : (
-                <>
-                  <span style={{ fontSize: '1rem' }}>
-                    You had this blog on {blog.createdAt}
-                  </span>
-                </>
-              )}
-            </h4>
-            <div className="card-body bg-light p-2">
-              <p>{blog.blogText}</p>
+    {blogs &&
+      blogs.map((blog) => (
+        <div key={blog._id} className="container-blog">
+          <div className="card">
+            <div className="card-header">
+              <div className="card-avatar"></div>
+              <p className="card-author">{blog.blogAuthor}</p>
+              <p className="createdAt">
+                {blog.createdAt}
+              </p>
+            </div>
+            <div className="card-body">
+              <p className="card-text">{blog.blogText}</p>
             </div>
             <Link
-              className="btn btn-primary btn-block btn-squared"
-              to={`/blogs/${blog._id}`}
-            >
-              Join the discussion on this blog.
-            </Link>
+            className="btn btn-dark readMore"
+            to={`/blogs/${blog._id}`}
+          >
+            Read More
+          </Link>
           </div>
-        ))}
-    </div>
+        </div>
+      ))}
+  </div>
   );
 };
 
