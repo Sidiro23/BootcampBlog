@@ -51,41 +51,43 @@ function App() {
         </div>
         <Router>
           <div className="paths">
-            <div className="homePage">
-              <Routes>
+          <Routes>
+            {/* <div className="homePage"> */}
+             
                 <Route path="/" element={<Homepage />} />
-              </Routes>
-            </div>
-            <div className="dashboard">
-              <Routes>
+              {/* </Routes> */}
+            {/* </div> */}
+            {/* <div className="dashboard"> */}
+              {/* <Routes> */}
                 <Route path="/dashboard" element={<DashBoard />} />
-              </Routes>
-            </div>
-            <div className="signup">
-              <Routes>
+              {/* </Routes> */}
+            {/* </div>
+            <div className="signup"> */}
+              {/* <Routes> */}
                 <Route path="/signup" element={<SignUp />} />
-              </Routes>
-            </div>
-            <div className="login">
-              <Routes>
+              {/* </Routes> */}
+            {/* </div>
+            <div className="login"> */}
+              {/* <Routes> */}
                 <Route path="/login" element={<Login />} />
-              </Routes>
-            </div>
-            <div className="resources">
-              <Routes>
+              {/* </Routes> */}
+            {/* </div>
+            <div className="resources"> */}
+              {/* <Routes> */}
                 <Route path="/resources" element={<Resources />} />
-              </Routes>
-            </div>
-            <div className="signout">
-              <Routes>
+              {/* </Routes> */}
+            {/* </div>
+            <div className="signout"> */}
+              {/* <Routes> */}
                 <Route path="/SignOut" element={<SignOut />} />
-              </Routes>
-            </div>
-            <div className="singleblog">
-              <Routes>
+              {/* </Routes> */}
+            {/* </div>
+            <div className="singleblog"> */}
+              {/* <Routes> */}
                 <Route path="/blogs/:blogId" element={<SingleBlog />} />
-              </Routes>
-            </div>
+                </Routes>
+            {/* </div> */}
+         
           </div>
         </Router>
       </div>
