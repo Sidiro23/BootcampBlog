@@ -16,7 +16,7 @@ import Header from "./components/Header/Header";
 import NavBar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
 import SignUp from "./components/SignUp/SignUp";
-import Login from "./components/LogIn/LogIn";
+import LogIn from "./components/LogIn/LogIn";
 import SignOut from "./components/Logout/logout";
 import Resources from "./components/Resources/Resources";
 
@@ -69,7 +69,7 @@ function App() {
             {/* </div>
             <div className="login"> */}
               {/* <Routes> */}
-                <Route path="/login" element={<Login />} />
+                <Route path="/login" element={<LogIn />} />
               {/* </Routes> */}
             {/* </div>
             <div className="resources"> */}
