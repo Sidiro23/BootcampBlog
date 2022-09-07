@@ -1,4 +1,6 @@
 import React from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPenToSquare} from '@fortawesome/free-solid-svg-icons'
 import "./edit.css";
 import { Button, Modal } from "react-bootstrap";
 import { useState } from "react";
@@ -104,7 +106,7 @@ const handleChange = (event) => {
       {Auth.loggedIn() ? (
         <>
           <button className="editBtn" onClick={handleShow}>
-            Edit
+          <FontAwesomeIcon className="penToSquare" icon={faPenToSquare}></FontAwesomeIcon>
           </button>
           <Modal show={show} id="modal">
             <Modal.Header>
