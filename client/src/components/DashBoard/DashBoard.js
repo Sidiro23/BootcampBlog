@@ -49,7 +49,6 @@ const DashBoard = () => {
             showUsername={false}
           />
         </div>
-        <div className="break"></div>
         <div className="createDiv">
           <NewBlog />
         </div>
