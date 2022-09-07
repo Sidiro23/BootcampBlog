@@ -68,6 +68,8 @@ a {
     position: relative;
     left: 75%;
     bottom: 30px;
+    box-shadow: 0 2px 2px var(--cultured), 0 6px 12px var(--cultured);
+  --cultured: #A3A3A3;
 }
 
 .editButtons {

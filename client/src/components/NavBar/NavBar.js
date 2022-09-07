@@ -70,7 +70,7 @@ function NavBar({ currentPage, handlePageChange }) {
           className={currentPage === "SignUp" ? "nav-link active" : "nav-link"}
         >
           {/* <FontAwesomeIcon icon={faUserPlus}></FontAwesomeIcon> */}
-          Sing Up
+          Sign Up
         </a>
       </li>
       <li className="nav nav-tabs bg-dark signoutTab">
