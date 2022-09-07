@@ -25,8 +25,8 @@ function NavBar({ currentPage, handlePageChange }) {
           onClick={() => handlePageChange("Home")}
           className={currentPage === "Home" ? "nav-link active" : "nav-link"}
         >
-          <FontAwesomeIcon icon={faHouse}></FontAwesomeIcon>
-          {/* Home */}
+          {/* <FontAwesomeIcon icon={faHouse}></FontAwesomeIcon> */}
+          Home
         </a>
       </li>
       <li className="nav nav-tabs bg-dark dashboardTab">
@@ -37,8 +37,8 @@ function NavBar({ currentPage, handlePageChange }) {
             currentPage === "Dashboard" ? "nav-link active" : "nav-link"
           }
         >
-          <FontAwesomeIcon icon={faClipboard}></FontAwesomeIcon>
-          {/* Dashboard */}
+          {/* <FontAwesomeIcon icon={faClipboard}></FontAwesomeIcon> */}
+          Dashboard
         </a>
       </li>
       <li className="nav nav-tabs bg-dark resourcesTab">
@@ -49,8 +49,8 @@ function NavBar({ currentPage, handlePageChange }) {
             currentPage === "Resources" ? "nav-link active" : "nav-link"
           }
         >
-          <FontAwesomeIcon icon={faFileCode}></FontAwesomeIcon>
-          {/* Resources */}
+          {/* <FontAwesomeIcon icon={faFileCode}></FontAwesomeIcon> */}
+          Resources
         </a>
       </li>
       <li className="nav nav-tabs bg-dark loginTab">
@@ -59,8 +59,8 @@ function NavBar({ currentPage, handlePageChange }) {
           onClick={() => handlePageChange("Login")}
           className={currentPage === "Login" ? "nav-link active" : "nav-link"}
         >
-          <FontAwesomeIcon icon={faRightToBracket}></FontAwesomeIcon>
-          {/* Login */}
+          {/* <FontAwesomeIcon icon={faRightToBracket}></FontAwesomeIcon> */}
+          Login
         </a>
       </li>
       <li className="nav nav-tabs bg-dark signupTab">
@@ -69,8 +69,8 @@ function NavBar({ currentPage, handlePageChange }) {
           onClick={() => handlePageChange("SignUp")}
           className={currentPage === "SignUp" ? "nav-link active" : "nav-link"}
         >
-          <FontAwesomeIcon icon={faUserPlus}></FontAwesomeIcon>
-          {/* Sing Up */}
+          {/* <FontAwesomeIcon icon={faUserPlus}></FontAwesomeIcon> */}
+          Sing Up
         </a>
       </li>
       <li className="nav nav-tabs bg-dark signoutTab">
@@ -81,8 +81,8 @@ function NavBar({ currentPage, handlePageChange }) {
       type="submit"
        onClick={logout}
     >
-      <FontAwesomeIcon icon={faLeftLong}></FontAwesomeIcon>
-      {/* Logout */}
+      {/* <FontAwesomeIcon icon={faLeftLong}></FontAwesomeIcon> */}
+      Logout
     </button>
         {/* <a
           href="/SignOut"
