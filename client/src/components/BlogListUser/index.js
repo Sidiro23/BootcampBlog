@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from "react-bootstrap"
 import Edit from "../Edit/Edit";
+import Delete from "../DeleteBlog/DeleteBlog";
 
 const BlogListUser = ({
   blogs,
@@ -29,7 +30,10 @@ const BlogListUser = ({
             <div className="card-body">
               <p className="card-text">{blog.blogText}</p>
               {/* prop to pass id to the edit */}
+              <div className='editButtons'>
+              <Delete />
               <Edit id={blog._id}/>
+              </div>
             </div>
             
             {/* <Link
