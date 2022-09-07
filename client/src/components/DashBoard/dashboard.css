@@ -1,6 +1,12 @@
+.dashboardContainer {
+    width: 100%;
+}
 .userSignedIn {
    display: flex;
    justify-content: center;
+}
+.editContainer {
+    display: flex;
 }
 .blogListUser {
     margin: auto;
@@ -8,7 +14,12 @@
 .dashboardSection {
     height: 85px;
 }
-.createBlog {
-    background-color: black;
+.break {
+    width: 50px
+}
+.createDiv {
+    position: relative;
+    left: 7%;
     color: white;
+    margin-bottom: auto;
 }

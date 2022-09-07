@@ -1,3 +1,4 @@
+import "./newBlog.css"
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
@@ -62,9 +63,9 @@ const NewBlog = () => {
   const handleClose = () => setShow(false);
 
   return (
-    <div className="editClass">
-      <button className="editBtn" onClick={handleShow}>
-        Create Blog
+    <div className="newClass">
+      <button className="blogBtn" onClick={handleShow}>
+        + New Blog
       </button>
       <Modal show={show} id="modal">
         <Modal.Header>
