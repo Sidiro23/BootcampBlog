@@ -69,6 +69,11 @@ a {
     left: 75%;
     bottom: 30px;
 }
+.editButtons {
+    display: flex;
+    position: relative;
+    top: 55%;
+}
 /* .faComment {
     position: relative;
     top: 15%;
