@@ -1,15 +1,17 @@
-import "./newBlog.css"
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { useMutation } from '@apollo/client';
+import "./newBlog.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { useMutation } from "@apollo/client";
 import { Button, Modal } from "react-bootstrap";
-import { ADD_BLOG } from '../../utils/mutations';
-import { QUERY_BLOGS, QUERY_ME } from '../../utils/queries';
+import { ADD_BLOG } from "../../utils/mutations";
+import { QUERY_BLOGS, QUERY_ME } from "../../utils/queries";
 
-import Auth from '../../utils/auth';
+import Auth from "../../utils/auth";
 
 const NewBlog = () => {
-  const [blogText, setBlogText] = useState('');
+  const [blogText, setBlogText] = useState("");
 
   const [addBlog, { error }] = useMutation(ADD_BLOG, {
     update(cache, { data: { addBlog } }) {
@@ -43,7 +45,7 @@ const NewBlog = () => {
         },
       });
 
-      setBlogText('');
+      setBlogText("");
     } catch (err) {
       console.error(err);
     }
@@ -52,11 +54,10 @@ const NewBlog = () => {
   const handleChange = (event) => {
     const { name, value } = event.target;
 
-    if (name === 'blogText' && value.length) {
+    if (name === "blogText" && value.length) {
       setBlogText(value);
     }
   };
-
 
   const [show, setShow] = useState(false);
   const handleShow = () => setShow(true);
@@ -65,7 +66,7 @@ const NewBlog = () => {
   return (
     <div className="newClass">
       <button className="blogBtn" onClick={handleShow}>
-        + New Blog
+        <FontAwesomeIcon className="faPlus" icon={faPlus}></FontAwesomeIcon> New Blog
       </button>
       <Modal show={show} id="modal">
         <Modal.Header>
@@ -75,14 +76,17 @@ const NewBlog = () => {
           <form onSubmit={handleFormSubmit}>
             <div className="mb-3">
               <label className="col-form-label comment">Text:</label>
-              <textarea name="blogText" 
-              className="form-control"
-              value={blogText}
-              onChange={handleChange}>
-              </textarea>
+              <textarea
+                name="blogText"
+                className="form-control"
+                value={blogText}
+                onChange={handleChange}
+              ></textarea>
             </div>
             <Modal.Footer>
-              <Button onClick={handleClose} type="submit">Save</Button>
+              <Button onClick={handleClose} type="submit">
+                Save
+              </Button>
             </Modal.Footer>
           </form>
         </Modal.Body>
