@@ -5,3 +5,10 @@
 .blogListUser {
     margin: auto;
 }
+.dashboardSection {
+    height: 85px;
+}
+.createBlog {
+    background-color: black;
+    color: white;
+}
