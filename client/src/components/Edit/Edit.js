@@ -40,7 +40,7 @@ const handleFormSubmit = async (event) => {
   try {
     const { data } = await updateBlog({
       variables: {
-      updateBlogId:props.id,
+        updateBlogId:props.id,
         blogText,
       },
     });
