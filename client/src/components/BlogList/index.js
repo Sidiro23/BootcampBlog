@@ -1,11 +1,11 @@
 import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faComment } from '@fortawesome/free-solid-svg-icons'
-import { Button } from "react-bootstrap";
+// import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./blogList.css";
-import CommentCard from "../Comment/CommentCard";
-import Comment from "../Comment/Comment";
+// import CommentCard from "../Comment/CommentCard";
+// import Comment from "../Comment";
 
 const BlogList = ({ blogs, title }) => {
   if (!blogs.length) {
@@ -28,7 +28,7 @@ const BlogList = ({ blogs, title }) => {
             </div>
             <Link to={`/blogs/${blog._id}`}>
               <button className="readMe">Read More</button>
-              {/* <FontAwesomeIcon className="faCommet" icon={faComment}></FontAwesomeIcon> */}
+              <FontAwesomeIcon className="faCommet" icon={faComment}></FontAwesomeIcon>
             </Link>
           </div>
         ))}

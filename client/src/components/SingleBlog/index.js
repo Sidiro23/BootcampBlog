@@ -1,12 +1,11 @@
 import React from "react";
-import "./SingleBlog.css";
+import "./singleblog.css";
 import { useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 
 import CommentList from "../CommentList";
-import Comment from "../Comment/Comment";
+import Comment from "../Comment";
 import { QUERY_SINGLE_BLOG } from "../../utils/queries";
-// import CommentForm from "../CommentForm";
 
 const SingleBlog = () => {
   // Use `useParams()` to retrieve value of the route parameter `:profileId`
@@ -48,9 +47,6 @@ const SingleBlog = () => {
       <div className="my-5">
         <CommentList comments={blog.comments} />
       </div>
-      {/* <div className="m-3 p-4" style={{ border: "1px dotted #1a1a1a" }}>
-        <CommentForm blogId={blog._id} />
-      </div> */}
     </div>
   );
 };

@@ -4,7 +4,7 @@ import Link from "react-router-dom";
 
 
 
-const SignOut = () => {
+const Logout = () => {
   const logout = (event) => {
     event.preventDefault();
     Auth.logout();
@@ -21,4 +21,4 @@ const SignOut = () => {
   );
 };
 
-export default SignOut;
+export default Logout;

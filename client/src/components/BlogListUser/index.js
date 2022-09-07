@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from "react-bootstrap"
-import Edit from "../Edit/Edit";
+import Edit from "../Edit";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPenToSquare} from '@fortawesome/free-solid-svg-icons';
 import { useMutation } from '@apollo/client';

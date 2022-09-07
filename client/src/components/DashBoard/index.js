@@ -3,7 +3,7 @@ import { Navigate, useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 import "./dashboard.css";
 import NewBlog from "../NewBlog";
-import BlogListUser from "../BlogListUser/index";
+import BlogListUser from "../BlogListUser";
 
 import { QUERY_ME } from "../../utils/queries";
 
