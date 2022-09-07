@@ -12,6 +12,7 @@ export default function Homepage() {
   return (
     <div className="container-home">
       <BlogList blogs={blogs} title="" />
+      <section className='homepageSection'></section>
     </div>
   );
 }

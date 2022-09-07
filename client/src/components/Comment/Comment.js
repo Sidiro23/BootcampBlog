@@ -51,7 +51,7 @@ const Comment = ({ blogId }) => {
           <Modal show={show} id="modal">
             <Modal.Header>
               <h5>Comment</h5>
-              <Button className="btn-close" onClick={handleClose}></Button>
+              <Button className="btn-close" onClick={handleClose} style={{backgroundColor: "#212529"}}></Button>
             </Modal.Header>
             <Modal.Body>
               <form onSubmit={handleFormSubmit}>

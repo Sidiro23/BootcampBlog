@@ -35,7 +35,6 @@ const BlogListUser = ({
               <Edit id={blog._id}/>
               </div>
             </div>
-            
             {/* <Link
             className="btn btn-dark readMore"
             to={`/blogs/${blog._id}`}
