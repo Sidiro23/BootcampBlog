@@ -9,42 +9,9 @@ import { useMutation } from '@apollo/client';
 import { UPDATE_BLOG } from '../../utils/mutations';
 import { QUERY_BLOGS, QUERY_ME } from '../../utils/queries';
 
-const Edit = () => {
-  // VERSION 1--------------------------------------------------------------------------------
-  // const [blogText, setBlogText] = useState('');
-
-  // const [updateBlog, { error }] = useMutation(UPDATE_BLOG);
-
-  // const handleFormSubmit = async (event) => {
-  //   event.preventDefault();
-
-  //   try {
-  //     const { data } = await updateBlog({
-  //       variables: {
-  //         blogId,
-  //         blogText,
-  //         blogAuthor: Auth.getProfile().data.username,
-  //       },
-  //     });
-
-  //     setBlogText('');
-  //   } catch (err) {
-  //     console.error(err);
-  //   }
-  // };
-
-  // const handleChange = (event) => {
-  //   const { name, value } = event.target;
-
-  //   if (name === 'blogText' && value.length) {
-  //     setBlogText(value);
-  //     // setCharacterCount(value.length);
-  //   }
-  // };
-//  VERSION 2--------------------------------------------------------------------------------
+const Edit = (props) => {
 const [blogText, setBlogText] = useState('');
 
-// const [characterCount, setCharacterCount] = useState(0);
 
 const [updateBlog, { error }] = useMutation(UPDATE_BLOG, {
   update(cache, { data: { updateBlog } }) {
@@ -59,7 +26,6 @@ const [updateBlog, { error }] = useMutation(UPDATE_BLOG, {
       console.error(e);
     }
 
-    // update me object's cache
     const { me } = cache.readQuery({ query: QUERY_ME });
     cache.writeQuery({
       query: QUERY_ME,
@@ -74,8 +40,8 @@ const handleFormSubmit = async (event) => {
   try {
     const { data } = await updateBlog({
       variables: {
+      updateBlogId:props.id,
         blogText,
-        blogAuthor: Auth.getProfile().data.username,
       },
     });
 
@@ -90,12 +56,8 @@ const handleChange = (event) => {
 
   if (name === 'blogText' && value.length) {
     setBlogText(value);
-    // setCharacterCount(value.length);
   }
 };
-// --------------------------------------------------------------------------------------
-// Need delete as well
-// ---------------------------------------------------------------------------------------
 
   const [show, setShow] = useState(false);
   const handleShow = () => setShow(true);
