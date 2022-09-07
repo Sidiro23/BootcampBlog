@@ -20,9 +20,6 @@ const NewBlog = () => {
         <Modal.Body>
           <form>
             <div className="mb-3">
-              <label className="col-form-label comment">Title: </label>
-              <input />
-              <br></br>
               <label className="col-form-label comment">Text:</label>
               <textarea name="commentText" className="form-control"></textarea>
             </div>
