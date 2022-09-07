@@ -10,12 +10,12 @@ const Edit = () => {
   const handleClose = () => setShow(false);
 
   return (
-    <div>
+    <div className="editClass">
       {Auth.loggedIn() ? (
         <>
-          <Button className="btn-dark" onClick={handleShow}>
+          <button className="editBtn" onClick={handleShow}>
             Edit
-          </Button>
+          </button>
           <Modal show={show} id="modal">
             <Modal.Header>
               <Button className="btn-close" onClick={handleClose}></Button>

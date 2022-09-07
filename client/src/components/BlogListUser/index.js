@@ -21,15 +21,16 @@ const BlogListUser = ({
           <div className="card">
             <div className="card-header">
               <div className="card-avatar"></div>
-              <p className="card-author">{blog.blogAuthor}</p>
+              <p className="cardAuthor">Username: {blog.blogAuthor}</p>
               <p className="createdAt">
                 {blog.createdAt}
               </p>
             </div>
             <div className="card-body">
               <p className="card-text">{blog.blogText}</p>
+              <Edit/>
             </div>
-            <Edit/>
+            
             {/* <Link
             className="btn btn-dark readMore"
             to={`/blogs/${blog._id}`}

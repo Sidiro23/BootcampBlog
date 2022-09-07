@@ -1,0 +1,7 @@
+.userSignedIn {
+   display: flex;
+   justify-content: center;
+}
+.blogListUser {
+    margin: auto;
+}

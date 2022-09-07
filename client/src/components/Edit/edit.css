@@ -1,0 +1,17 @@
+.editBtn {
+  display: flex;
+  background-color: #212529;
+  color: white;
+  border-radius: 35px;
+  justify-content: center;
+  height: 40px;
+  width: 100px;
+  padding-top: 7px;
+}
+.editClass {
+  height: 40px;
+  width: 100px;
+  margin-left: auto;
+  position: relative;
+  top: 65%;
+}
