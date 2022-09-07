@@ -26,16 +26,18 @@ q:before, q:after {
 /* Styling starts here ******************************************************************************/
 .appBody{
   display: flex;
+  justify-content: space-evenly;
 }
 .paths {
+  margin: 25px;
   position: relative;
-  left: 17%;
-  width: 50vw;
+  right: 5%;
+  width: 65vw;
 }
 .navBar {
   display: block;
   position: relative;
-  left: 100px;
+  margin:15px;
   top: 70px;
   width: 150px;
 

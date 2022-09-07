@@ -1,25 +1,20 @@
 .dashboardContainer {
-    width: 100%;
+  width: 100%;
 }
 .userSignedIn {
-   display: flex;
-   justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 .editContainer {
-    display: flex;
+  display: flex;
 }
 .blogListUser {
-    margin: auto;
+  margin: auto;
 }
 .dashboardSection {
-    height: 85px;
-}
-.break {
-    width: 50px
+  height: 85px;
 }
 .createDiv {
-    position: relative;
-    left: 7%;
-    color: white;
-    margin-bottom: auto;
+  color: white;
+  margin-bottom: auto;
 }
