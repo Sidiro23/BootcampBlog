@@ -12,7 +12,7 @@
 
 ## Demo ⚠️
 
-[Here is a demo of it in action!]() 
+![Here is a demo of it in action!](./client/public/assets/Monosnap%20screencast%202022-09-07%2014-30-02.gif.sb-24ba2028-EIcJMg) 
 
 ## Instructions 📝
 
@@ -37,7 +37,7 @@ Once you are logged out you can still see the post but cant make any changes!
 
 ## Technologies Used
 
-![Tech Used](https://user-images.githubusercontent.com/107494937/184217403-671bb0af-fa96-47b5-895a-449d3345182d.PNG)
+![Tech Used](./client/public/assets/Monosnap%20Prototyping%20presentation%20-%20Google%20Slides%202022-09-07%2012-47-58.png)
 
 
 ## Future Development 
@@ -45,6 +45,7 @@ Once you are logged out you can still see the post but cant make any changes!
    - Ability to add avatar for each user.
    - Have a profile for each user.
    - Include instant chat.
+   - Include friend suggestions
 
 
 
