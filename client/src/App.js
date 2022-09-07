@@ -9,16 +9,16 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { setContext } from "@apollo/client/link/context";
-import Homepage from "./components/Homepage/Homepage";
-import SingleBlog from "./components/SingleBlog/SingleBlog";
-import DashBoard from "./components/DashBoard/DashBoard";
-import Header from "./components/Header/Header";
-import NavBar from "./components/NavBar/NavBar";
-import Footer from "./components/Footer/Footer";
-import SignUp from "./components/SignUp/SignUp";
-import Login from "./components/LogIn/LogIn";
-import SignOut from "./components/Logout/logout";
-import Resources from "./components/Resources/Resources";
+import Homepage from "./components/Homepage";
+import SingleBlog from "./components/SingleBlog";
+import DashBoard from "./components/DashBoard";
+import Header from "./components/Header";
+import NavBar from "./components/NavBar";
+import Footer from "./components/Footer";
+import SignUp from "./components/SignUp";
+import Login from "./components/Login";
+import Logout from "./components/Logout";
+import Resources from "./components/Resources";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -79,7 +79,7 @@ function App() {
             {/* </div>
             <div className="signout"> */}
               {/* <Routes> */}
-                <Route path="/SignOut" element={<SignOut />} />
+                <Route path="/Logout" element={<Logout />} />
               {/* </Routes> */}
             {/* </div>
             <div className="singleblog"> */}

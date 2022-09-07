@@ -25,7 +25,7 @@ function NavBar({ currentPage, handlePageChange }) {
           onClick={() => handlePageChange("Home")}
           className={currentPage === "Home" ? "nav-link active" : "nav-link"}
         >
-          {/* <FontAwesomeIcon icon={faHouse}></FontAwesomeIcon> */}
+          <FontAwesomeIcon icon={faHouse}></FontAwesomeIcon>
           Home
         </a>
       </li>
@@ -37,7 +37,7 @@ function NavBar({ currentPage, handlePageChange }) {
             currentPage === "Dashboard" ? "nav-link active" : "nav-link"
           }
         >
-          {/* <FontAwesomeIcon icon={faClipboard}></FontAwesomeIcon> */}
+          <FontAwesomeIcon icon={faClipboard}></FontAwesomeIcon>
           Dashboard
         </a>
       </li>
@@ -49,7 +49,7 @@ function NavBar({ currentPage, handlePageChange }) {
             currentPage === "Resources" ? "nav-link active" : "nav-link"
           }
         >
-          {/* <FontAwesomeIcon icon={faFileCode}></FontAwesomeIcon> */}
+          <FontAwesomeIcon icon={faFileCode}></FontAwesomeIcon>
           Resources
         </a>
       </li>
@@ -59,7 +59,7 @@ function NavBar({ currentPage, handlePageChange }) {
           onClick={() => handlePageChange("Login")}
           className={currentPage === "Login" ? "nav-link active" : "nav-link"}
         >
-          {/* <FontAwesomeIcon icon={faRightToBracket}></FontAwesomeIcon> */}
+          <FontAwesomeIcon icon={faRightToBracket}></FontAwesomeIcon>
           Login
         </a>
       </li>
@@ -69,7 +69,7 @@ function NavBar({ currentPage, handlePageChange }) {
           onClick={() => handlePageChange("SignUp")}
           className={currentPage === "SignUp" ? "nav-link active" : "nav-link"}
         >
-          {/* <FontAwesomeIcon icon={faUserPlus}></FontAwesomeIcon> */}
+          <FontAwesomeIcon icon={faUserPlus}></FontAwesomeIcon>
           Sign Up
         </a>
       </li>
@@ -81,7 +81,7 @@ function NavBar({ currentPage, handlePageChange }) {
       type="submit"
        onClick={logout}
     >
-      {/* <FontAwesomeIcon icon={faLeftLong}></FontAwesomeIcon> */}
+      <FontAwesomeIcon icon={faLeftLong}></FontAwesomeIcon>
       Logout
     </button>
         {/* <a
