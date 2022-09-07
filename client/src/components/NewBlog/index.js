@@ -1,6 +1,7 @@
 import React from "react";
 import { Button, Modal } from "react-bootstrap";
 import { useState } from "react";
+import "./newBlog.css";
 import Auth from "../../utils/auth";
 
 const NewBlog = () => {
@@ -9,8 +10,8 @@ const NewBlog = () => {
   const handleClose = () => setShow(false);
 
   return (
-    <div className="editClass">
-      <button className="editBtn" onClick={handleShow}>
+    <div className="newClass">
+      <button className="blogBtn" onClick={handleShow}>
         Create Blog
       </button>
       <Modal show={show} id="modal">
