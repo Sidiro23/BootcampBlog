@@ -1,6 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPenToSquare} from '@fortawesome/free-solid-svg-icons'
+import { faPenToSquare} from '@fortawesome/free-solid-svg-icons';
 import "./edit.css";
 import { Button, Modal } from "react-bootstrap";
 import { useState } from "react";
@@ -9,30 +9,36 @@ import { useMutation } from '@apollo/client';
 import { UPDATE_BLOG } from '../../utils/mutations';
 import { QUERY_BLOGS, QUERY_ME } from '../../utils/queries';
 
+// Making double call to refresh (not very efficient)
 const Edit = (props) => {
 const [blogText, setBlogText] = useState('');
 
-
 const [updateBlog, { error }] = useMutation(UPDATE_BLOG, {
-  update(cache, { data: { updateBlog } }) {
-    try {
-      const { blogs } = cache.readQuery({ query: QUERY_BLOGS });
+  refetchQueries: [{query: QUERY_ME}],
+  awaitRefetchQueries: true,
+})
+// Need to modify line 28 to make it work with cache and without reloading and making double calls.
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// const [updateBlog, { error }] = useMutation(UPDATE_BLOG, {
+//   update(cache, { data: { updateBlog } }) {
+//     try {
+//       const { blogs } = cache.readQuery({ query: QUERY_BLOGS });
 
-      cache.writeQuery({
-        query: QUERY_BLOGS,
-        data: { blogs: [updateBlog, ...blogs] },
-      });
-    } catch (e) {
-      console.error(e);
-    }
+//       cache.writeQuery({
+//         query: QUERY_BLOGS,
+//         data: { blogs: [updateBlog, ...blogs] },
+//       });
+//     } catch (e) {
+//       console.error(e);
+//     }
 
-    const { me } = cache.readQuery({ query: QUERY_ME });
-    cache.writeQuery({
-      query: QUERY_ME,
-      data: { me: { ...me, blogs: [...me.blogs, updateBlog] } },
-    });
-  },
-});
+//     const { me } = cache.readQuery({ query: QUERY_ME });
+//     cache.writeQuery({
+//       query: QUERY_ME,
+//       data: { me: { ...me, blogs: [...me.blogs, updateBlog] } },
+//     });
+//   },
+// });
 
 const handleFormSubmit = async (event) => {
   event.preventDefault();
