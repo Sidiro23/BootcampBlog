@@ -46,6 +46,10 @@ q:before, q:after {
 .container-nav {
   width: 150px;
 }
+.modal-header, .modal-body {
+  background-color: #5b5b62;  
+}
+
 
 @media screen and (max-width: 470px)  {
     .header {
