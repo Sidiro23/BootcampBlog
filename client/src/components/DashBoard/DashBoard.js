@@ -2,7 +2,7 @@ import React from "react";
 import { Navigate, useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 import "./dashboard.css";
-
+import NewBlog from "../NewBlog"
 import BlogListUser from "../BlogListUser/index";
 
 import { QUERY_ME } from "../../utils/queries";
@@ -36,21 +36,24 @@ const DashBoard = () => {
   }
   console.log(data);
   return (
-    <div>
-      <div className="flex-row justify-center mb-3">
-        <div className="userSignedIn">
-          <h2>Viewing {userParam ? `${user.username}'s` : "your"} profile.</h2>
-        </div>
+    <div className="dashboardContainer">
+      <div className="userSignedIn">
+        <h2>Viewing {userParam ? `${user.username}'s` : "your"} profile.</h2>
+      </div>
 
-        <div className="blogListUser">
-          <BlogListUser
-            blogs={user.blogs}
-            title={`${user.username}'s blogs...`}
-            showTitle={false}
-            showUsername={false}
-          />
-        </div>
-        {/* {!userParam && (
+      <div className="blogListUser">
+        <BlogListUser
+          blogs={user.blogs}
+          title={`${user.username}'s blogs...`}
+          showTitle={false}
+          showUsername={false}
+        />
+      </div>
+      <div className="createDiv">
+        <NewBlog />
+      </div>
+      <section className="dashboardSection"></section>
+      {/* {!userParam && (
           <div
             className="col-12 col-md-10 mb-3 p-3"
             style={{ border: '1px dotted #1a1a1a' }}
@@ -58,7 +61,6 @@ const DashBoard = () => {
             <ThoughtForm />
           </div>
         )} */}
-      </div>
     </div>
   );
 };
