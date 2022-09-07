@@ -16,7 +16,7 @@ import Header from "./components/Header";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import SignUp from "./components/SignUp";
-import Login from "./components/Login";
+import Login from "./components/Login/index";
 import Logout from "./components/Logout";
 import Resources from "./components/Resources";
 
