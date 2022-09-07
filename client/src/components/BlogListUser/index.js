@@ -28,7 +28,8 @@ const BlogListUser = ({
             </div>
             <div className="card-body">
               <p className="card-text">{blog.blogText}</p>
-              <Edit/>
+              {/* prop to pass id to the edit */}
+              <Edit id={blog._id}/>
             </div>
             
             {/* <Link
