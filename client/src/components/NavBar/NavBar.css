@@ -7,7 +7,7 @@
   flex-direction: column;
   width: 150px;
 }
-.homeTab, .dashboardTab, .loginTab, .signupTab, .signoutTab {
+.homeTab, .dashboardTab, .loginTab, .signupTab, .signoutTab,.resourcesTab {
   text-align: center;
   border-radius: 35px;
 }

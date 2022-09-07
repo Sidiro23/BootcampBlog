@@ -32,6 +32,17 @@ function NavBar({ currentPage, handlePageChange }) {
           DashBoard
         </a>
       </li>
+      <li className="nav nav-tabs bg-dark resourcesTab">
+        <a
+          href="/resources"
+          onClick={() => handlePageChange("Resources")}
+          className={
+            currentPage === "Resources" ? "nav-link active" : "nav-link"
+          }
+        >
+          Resources
+        </a>
+      </li>
       <li className="nav nav-tabs bg-dark loginTab">
         <a
           href="/login"
