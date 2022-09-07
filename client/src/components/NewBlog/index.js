@@ -84,7 +84,7 @@ const NewBlog = () => {
               ></textarea>
             </div>
             <Modal.Footer>
-              <Button onClick={handleClose} type="submit">
+              <Button style={{backgroundColor: "#5b5b62", border:"solid 1px black"}} onClick={handleClose} type="submit">
                 Save
               </Button>
             </Modal.Footer>

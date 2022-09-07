@@ -1,4 +1,6 @@
 import React from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faComment } from '@fortawesome/free-solid-svg-icons'
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./blogList.css";
@@ -24,8 +26,9 @@ const BlogList = ({ blogs, title }) => {
             <div className="card-body">
               <p className="card-text">{blog.blogText}</p>
             </div>
-            <Link className="readMe" to={`/blogs/${blog._id}`}>
-              Read More
+            <Link to={`/blogs/${blog._id}`}>
+              <button className="readMe">Read More</button>
+              {/* <FontAwesomeIcon className="faCommet" icon={faComment}></FontAwesomeIcon> */}
             </Link>
           </div>
         ))}
