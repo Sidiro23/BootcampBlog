@@ -1,17 +1,23 @@
 .blogBtn {
-    display: flex;
-    background-color: #226828;
-    color: white;
-    border-radius: 35px;
-    justify-content: center;
-    height: 40px;
-    width: 100px;
-    padding-top: 7px;
-  }
-  .newClass {
-    height: 40px;
-    width: 100px;
-    margin-left: auto;
-    position: relative;
-    top: 65%;
-  }
+  display: flex;
+  background-color: #226828;
+  color: white;
+  border-radius: 35px;
+  justify-content: center;
+  height: 40px;
+  width: 125px;
+  padding-top: 7px;
+}
+.newClass {
+  height: 40px;
+  width: 100px;
+  margin-left: auto;
+  position: relative;
+  top: 65%;
+}
+
+.faPlus {
+  position: relative;
+  top: 9%;
+  right: 5%;
+}

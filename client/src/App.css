@@ -1,3 +1,4 @@
+/* HTML5 display-role reset for older browsers */
 *{
 	margin: 0;
 	padding: 0;
@@ -6,10 +7,7 @@
 	font: inherit;
 	vertical-align: baseline;
   font-family: Arial, Helvetica, sans-serif;
-  
-  
 }
-/* HTML5 display-role reset for older browsers */
 body {
 	line-height: 1;
 }
@@ -47,4 +45,15 @@ q:before, q:after {
 }
 .container-nav {
   width: 150px;
+}
+
+@media screen and (max-width: 470px)  {
+    .header {
+      width: 470px;
+    }
+}
+@media screen and (max-width: 850px)  {
+  .header {
+    width: 860px;
+  }
 }
