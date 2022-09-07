@@ -70,7 +70,7 @@ const NewBlog = () => {
       </button>
       <Modal show={show} id="modal">
         <Modal.Header>
-          <Button className="btn-close" onClick={handleClose}></Button>
+          <Button className="btn-close" onClick={handleClose} style={{backgroundColor: "#212529"}}></Button>
         </Modal.Header>
         <Modal.Body>
           <form onSubmit={handleFormSubmit}>
@@ -84,7 +84,7 @@ const NewBlog = () => {
               ></textarea>
             </div>
             <Modal.Footer>
-              <Button onClick={handleClose} type="submit">
+              <Button style={{backgroundColor: "#5b5b62", border:"solid 1px black"}} onClick={handleClose} type="submit">
                 Save
               </Button>
             </Modal.Footer>
