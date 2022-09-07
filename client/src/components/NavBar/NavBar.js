@@ -50,10 +50,10 @@ function NavBar({ currentPage, handlePageChange }) {
           Sign up
         </a>
       </li>
-      <li className="nav nav-tabs bg-dark signupTab">
+      <li className="nav nav-tabs bg-dark signoutTab">
 
       <button
-      className="btn btn-block btn-dark"
+      className="signoutBtn"
       style={{ cursor: "pointer" }}
       type="submit"
        onClick={logout}

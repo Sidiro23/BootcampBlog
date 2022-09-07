@@ -1,0 +1,14 @@
+.userSignedIn {
+   display: flex;
+   justify-content: center;
+}
+.blogListUser {
+    margin: auto;
+}
+.dashboardSection {
+    height: 85px;
+}
+.createBlog {
+    background-color: black;
+    color: white;
+}
