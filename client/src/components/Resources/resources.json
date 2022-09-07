@@ -1,0 +1,50 @@
+[
+  {
+      "id": 1,
+      "name": "MDN",
+      "image": "https://www.xda-developers.com/files/2022/03/moz_blog_header_MDN-Intro-810x298_c.jpg",
+      
+      "deploy": " https://developer.mozilla.org/en-US/"
+      
+  },
+  {
+      "id": 2,
+      "name": "stackoverflow",
+      "image": "https://miro.medium.com/max/1200/0*UEtwA2ask7vQYW06.png",
+      
+      "deploy": " https://stackoverflow.com/"
+      
+  },
+  {
+      "id": 3,
+      "name": "CodePen",
+      "image": "https://blog.expertrec.com/wp-content/uploads/2019/06/Codepen.png",
+      
+      "deploy": "https://codepen.io/"
+      
+  },
+  {
+      "id": 4,
+      "name": "Leet Code",
+      "image": "https://leetcode.com/static/images/LeetCode_Sharing.png",
+      
+      "deploy": "https://leetcode.com/"
+      
+  },
+  {
+      "id": 5,
+      "name": "W3 Schools",
+      "image": "https://internet-salmagundi.com/wp-content/uploads/2019/03/W3-MatFrame-895x493px-Qual100.jpg",
+      
+      "deploy": "https://www.w3schools.com/default.asp"
+      
+  },
+  {
+      "id": 6,
+      "name": "NPM",
+      "image": "https://miro.medium.com/max/548/1*o474X_2eTiF2Dnn39h6Rjg.jpeg",
+      
+      "deploy": "https://www.npmjs.com/"
+      
+  }
+]
