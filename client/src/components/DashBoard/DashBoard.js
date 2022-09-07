@@ -2,7 +2,7 @@ import React from "react";
 import { Navigate, useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 import "./dashboard.css";
-import NewBlog from "../NewBlog"
+import NewBlog from "../NewBlog";
 import BlogListUser from "../BlogListUser/index";
 
 import { QUERY_ME } from "../../utils/queries";
@@ -40,18 +40,21 @@ const DashBoard = () => {
       <div className="userSignedIn">
         <h2>Viewing {userParam ? `${user.username}'s` : "your"} profile.</h2>
       </div>
+      <div className="editContainer">
+        <div className="blogListUser">
+          <BlogListUser
+            blogs={user.blogs}
+            title={`${user.username}'s blogs...`}
+            showTitle={false}
+            showUsername={false}
+          />
+        </div>
+        <div className="break"></div>
+        <div className="createDiv">
+          <NewBlog />
+        </div>
+      </div>
 
-      <div className="blogListUser">
-        <BlogListUser
-          blogs={user.blogs}
-          title={`${user.username}'s blogs...`}
-          showTitle={false}
-          showUsername={false}
-        />
-      </div>
-      <div className="createDiv">
-        <NewBlog />
-      </div>
       <section className="dashboardSection"></section>
       {/* {!userParam && (
           <div
