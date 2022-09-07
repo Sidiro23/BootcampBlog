@@ -10,6 +10,8 @@
 .homeTab, .dashboardTab, .loginTab, .signupTab, .signoutTab,.resourcesTab {
   text-align: center;
   border-radius: 35px;
+  box-shadow: 0 2px 2px var(--cultured), 0 6px 12px var(--cultured);
+  --cultured: #A3A3A3;
 }
  
 .nav nav-tabs {
