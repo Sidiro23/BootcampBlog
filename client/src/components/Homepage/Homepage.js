@@ -3,6 +3,7 @@ import { useQuery } from "@apollo/client";
 import { QUERY_BLOGS } from "../../utils/queries";
 import BlogList from "../BlogList/index";
 import Auth from "../../utils/auth";
+import "./homepage.css";
 
 export default function Homepage() {
   const { data } = useQuery(QUERY_BLOGS);

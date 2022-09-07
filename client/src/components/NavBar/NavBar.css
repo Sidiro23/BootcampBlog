@@ -1,21 +1,36 @@
-.container-nav {
-  display: flex;
-  width: 220px;
-  position: relative;
-  top: 74px;
-  left: 70px;
-}
-.nav-link{
+.nav-link {
   color: white;
+  width: 150px;
 }
 .homeTabs {
   display: flex;
   flex-direction: column;
-  width: 220px;
+  width: 150px;
 }
-.homeTabs li {
+.homeTab, .dashboardTab, .loginTab, .signupTab, .signoutTab {
+  text-align: center;
+  border-radius: 35px;
+}
+ 
+.nav nav-tabs {
+  border-radius: 35px;
+}
+.signoutTab {
+  display: flex;
+  justify-content: center;
+}
+.signoutBtn {
+  display: flex;
+  padding-top: 7px;
+  border-radius: 35px;
+  height: 40px;
+  background-color: #212529;
+  color: white;
+}
+
+/* .homeTabs li {
   display: flex;
   justify-content: center;
   border-radius: 35px;
   margin: 2px;
-}
+} */
