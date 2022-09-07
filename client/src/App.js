@@ -19,7 +19,6 @@ import SignUp from "./components/SignUp/SignUp";
 import Login from "./components/LogIn/LogIn";
 import SignOut from "./components/Logout/logout";
 
-
 const httpLink = createHttpLink({
   uri: "/graphql",
 });
@@ -34,8 +33,6 @@ const authLink = setContext((_, { headers }) => {
   };
 });
 
-
-
 const client = new ApolloClient({
   link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
@@ -44,23 +41,50 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-      <Router>
-        <div className="flex-column justify-flex-start min-100-vh">
-          <Header />
+      <div className="header">
+        <Header />
+      </div>
+      <div className="appBody">
+        <div className="navBar">
           <NavBar />
-          <div className="container">
-            <Routes>
-              <Route path="/" element={<Homepage />} />
-              <Route path="/dashboard" element={<DashBoard />} />
-              <Route path="/signup" element={<SignUp />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/SignOut" element={<SignOut />} />
-              <Route path="/blogs/:blogId" element={<SingleBlog />} />
-            </Routes>
-          </div>
-          <Footer />
         </div>
-      </Router>
+        <Router>
+          <div className="paths">
+            <div className="homePage">
+              <Routes>
+                <Route path="/" element={<Homepage />} />
+              </Routes>
+            </div>
+            <div className="dashboard">
+              <Routes>
+                <Route path="/dashboard" element={<DashBoard />} />
+              </Routes>
+            </div>
+            <div className="signup">
+              <Routes>
+                <Route path="/signup" element={<SignUp />} />
+              </Routes>
+            </div>
+            <div className="login">
+              <Routes>
+                <Route path="/login" element={<Login />} />
+              </Routes>
+            </div>
+            <div className="signout">
+              <Routes>
+                <Route path="/SignOut" element={<SignOut />} />
+              </Routes>
+            </div>
+            <div className="singleblog">
+              <Routes>
+                <Route path="/blogs/:blogId" element={<SingleBlog />} />
+              </Routes>
+            </div>
+          </div>
+        </Router>
+      </div>
+
+      <Footer />
     </ApolloProvider>
   );
 }
