@@ -72,10 +72,10 @@ const Comment = ({ blogId }) => {
                   ></textarea>
                 </div>
                 <Modal.Footer>
-                  <Button type="submit">
+                  <Button style={{backgroundColor: "#5b5b62", border:"solid 1px black"}} type="submit">
                     Submit
                   </Button>
-                  <Button onClick={handleClose}>Close</Button>
+                  <Button onClick={handleClose} style={{backgroundColor: "#5b5b62", border:"solid 1px black"}}>Close</Button>
                 </Modal.Footer>
               </form>
             </Modal.Body>
