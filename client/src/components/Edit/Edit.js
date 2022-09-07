@@ -64,7 +64,7 @@ const handleChange = (event) => {
   const handleClose = () => setShow(false);
 
   return (
-    <div className="editClass">
+    <div className="editBlog">
       {Auth.loggedIn() ? (
         <>
           <button className="editBtn" onClick={handleShow}>
@@ -86,8 +86,7 @@ const handleChange = (event) => {
                   ></textarea>
                 </div>
                 <Modal.Footer>
-                  <Button onClick={handleClose}>Delete</Button>
-                  <Button onClick={handleClose} type="submit">Update</Button>
+                  <Button style={{backgroundColor: "#5b5b62", border:"solid 1px black"}} onClick={handleClose} type="submit">Update</Button>
                 </Modal.Footer>
               </form>
             </Modal.Body>
