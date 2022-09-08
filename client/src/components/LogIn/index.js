@@ -4,7 +4,7 @@ import { LOGIN_USER } from "../../utils/mutations";
 import "./login.css";
 import Auth from "../../utils/auth";
 
-const Login = (props) => {
+const Login = () => {
   const [formState, setFormState] = useState({ email: '', password: '' });
   const [login] = useMutation(LOGIN_USER);
   const handleChange = (event) => {
